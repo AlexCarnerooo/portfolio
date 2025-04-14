@@ -5,7 +5,7 @@ function App() {
     <div className="min-h-screen bg-dark">
       {/* Header */}
       <header className="container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-secondary">Proyectos</h1>
+        <h1 className="text-4xl font-bold text-secondary">Mi Portfolio</h1>
       </header>
 
       {/* Projects Grid */}
