@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import profileImage from './assets/profile.jpg'
 
 function App() {
   return (
@@ -65,7 +66,7 @@ function App() {
               <div className="absolute inset-0 bg-white/10 rounded-full blur-2xl"></div>
               <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-secondary/20">
                 <img 
-                  src="/portfolio/src/assets/profile.jpg"
+                  src={profileImage}
                   alt="Alex Carnero" 
                   className="w-full h-full object-cover object-center scale-105"
                 />
