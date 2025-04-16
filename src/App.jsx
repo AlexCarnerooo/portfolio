@@ -65,7 +65,7 @@ function App() {
               <div className="absolute inset-0 bg-white/10 rounded-full blur-2xl"></div>
               <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-secondary/20">
                 <img 
-                  src="https://raw.githubusercontent.com/AlexCarnerooo/portfolio/main/src/assets/profile.jpg"
+                  src="/portfolio/src/assets/profile.jpg"
                   alt="Alex Carnero" 
                   className="w-full h-full object-cover object-center scale-105"
                 />
