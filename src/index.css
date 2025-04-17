@@ -42,7 +42,7 @@ nav {
 }
 
 .nav-scrolled {
-  @apply bg-black/80 backdrop-blur-md;
+  @apply bg-black/80 backdrop-blur-sm shadow-lg;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
@@ -145,37 +145,37 @@ body {
 }
 
 .skills-slider-track-reverse {
-  animation: slide-reverse 15s linear infinite;
+  animation: slide-reverse 20s linear infinite;
   width: fit-content;
   padding-left: 50%;
 }
 
 @keyframes slide {
-  0% {
-    transform: translateX(0);
+  from {
+    transform: translateX(-50%);
   }
-  100% {
-    transform: translateX(-100%);
+  to {
+    transform: translateX(0%);
   }
 }
 
 @keyframes slide-reverse {
-  0% {
-    transform: translateX(-100%);
+  from {
+    transform: translateX(0%);
   }
-  100% {
-    transform: translateX(0);
+  to {
+    transform: translateX(-50%);
   }
 }
 
 .skill-icon {
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
   opacity: 0.6;
   filter: grayscale(30%);
 }
 
 .skill-icon:hover {
-  transform: translateY(-8px) scale(1.1);
+  transform: scale(1.1);
   opacity: 1;
   filter: grayscale(0%);
 } 
