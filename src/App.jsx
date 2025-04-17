@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import profileImage from './assets/profile.jpg'
+import profileImage from '@/assets/profile.jpg'
 
 function App() {
   return (
