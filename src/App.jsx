@@ -69,74 +69,84 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#1a1a2e] via-[#1a1a2e] to-[#0f172a] overflow-x-hidden">
-      {/* Navbar */}
-      <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-sm shadow-lg' : ''}`}>
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between py-4">
-            <a href="#" className="text-3xl font-bold text-white">
-              <span className="text-[#4ade80]">&lt;</span>Alexandre<span className="text-[#4ade80]">/&gt;</span>
-            </a>
-            <div className="flex items-center gap-10">
-              <a href="#sobre-mi" className="text-white hover:text-[#4ade80] transition-colors font-medium">Sobre mí</a>
-              <a href="#proyectos" className="text-white hover:text-[#4ade80] transition-colors font-medium">Proyectos</a>
-              <a href="#logros" className="text-white hover:text-[#4ade80] transition-colors font-medium">Logros</a>
-              <a href="#contacto" className="text-white hover:text-[#4ade80] transition-colors font-medium">Contacto</a>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      {/* 1. Hero Section */}
+      {/* Hero Section */}
       <section className="min-h-screen relative overflow-hidden flex items-center justify-center bg-gradient-to-b from-[#1a1a2e] to-[#16213E]">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+        <div className="absolute inset-0 bg-[url('/images/grid.png')] opacity-10"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-6xl mx-auto">
             {/* Text Content */}
-            <div className="text-left space-y-6">
-              <h2 className="text-[#4ade80] text-2xl font-medium">Hola, soy</h2>
-              <h1 className="text-7xl font-bold text-white leading-tight">
+            <div className="text-left space-y-4 md:space-y-6 fade-in-left order-2 lg:order-1">
+              <h2 className="text-white/70 text-lg md:text-xl lg:text-2xl font-medium tracking-wider">Hola, soy</h2>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
                 Alexandre
                 <br />
                 Carnero
               </h1>
-              <h3 className="text-4xl text-[#4ade80] font-medium italic">FrontEnd Developer</h3>
-              <p className="text-gray-300 text-xl max-w-lg">
-                Transformando ideas en realidad a través de código limpio y soluciones innovadoras
+              <h3 className="text-2xl sm:text-3xl md:text-4xl text-white/90 font-medium">
+                Desarrollador en Formación
+              </h3>
+              <p className="text-gray-300 text-base sm:text-lg md:text-xl max-w-lg">
+                Profesional en formación especializado en programación, IA y análisis de datos. 
+                Combinando innovación tecnológica con perspectiva internacional para crear soluciones de impacto.
               </p>
-              <div className="flex items-center gap-6 pt-4">
-                <button className="bg-[#4ade80] text-black px-8 py-3 rounded-lg font-medium hover:bg-[#4ade80]/90 transition-all shadow-lg hover:shadow-[#4ade80]/20 text-lg">
-                  Descargar CV
-                </button>
+              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pt-4">
+                <a 
+                  href="docs/cv.pdf"
+                  download
+                  className="w-full sm:w-auto group relative px-8 py-3 rounded-lg font-medium text-base lg:text-lg overflow-hidden">
+                  <div className="absolute inset-0 w-0 bg-white transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+                  <span className="relative text-white group-hover:text-black">Descargar CV</span>
+                </a>
                 <div className="flex gap-6">
-                  <a href="https://linkedin.com/in/alexandre-carnero-1a1561283" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#4ade80] transition-colors">
-                    <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+                  <a href="https://linkedin.com/in/alexandre-carnero-1a1561283" target="_blank" rel="noopener noreferrer" 
+                     className="text-white/70 hover:text-white transition-colors transform hover:scale-110 duration-200">
+                    <svg className="w-6 h-6 md:w-7 md:h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
                   </a>
-                  <a href="https://github.com/AlexCarnerooo" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#4ade80] transition-colors">
-                    <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.237 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  <a href="https://github.com/AlexCarnerooo" target="_blank" rel="noopener noreferrer" 
+                     className="text-white/70 hover:text-white transition-colors transform hover:scale-110 duration-200">
+                    <svg className="w-6 h-6 md:w-7 md:h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.237 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                   </a>
-                  <a href="https://instagram.com/alexcarneroo" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#4ade80] transition-colors">
-                    <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                  <a href="https://instagram.com/alexcarneroo" target="_blank" rel="noopener noreferrer" 
+                     className="text-white/70 hover:text-white transition-colors transform hover:scale-110 duration-200">
+                    <svg className="w-6 h-6 md:w-7 md:h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                   </a>
                 </div>
               </div>
             </div>
 
             {/* Image */}
-            <div className="relative">
-              <div className="relative w-full h-[600px]">
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#4ade80]/20 to-transparent rounded-full blur-3xl"></div>
-                <img
-                  src="/images/profile.jpg"
-                  alt="Alexandre Carnero"
-                  className="w-full h-full object-cover object-center rounded-3xl shadow-2xl shadow-[#4ade80]/10"
-                />
-                <div className="absolute -top-4 -right-4 w-20 h-20">
-                  <img src="/images/react.png" alt="React" className="w-full h-full object-contain animate-spin-slow" />
+            <div className="relative fade-in-right flex items-center justify-center order-1 lg:order-2">
+              <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[400px] md:h-[400px] transform hover:scale-105 transition-all duration-500">
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent rounded-full"></div>
+                <div className="w-full h-full rounded-full border border-white/10 overflow-hidden shadow-2xl">
+                  <img
+                    src={profileImage}
+                    alt="Alexandre Carnero"
+                    className="w-full h-full object-cover object-center"
+                  />
                 </div>
-                <div className="absolute -bottom-4 -left-4 w-16 h-16">
-                  <img src="/images/js.png" alt="JavaScript" className="w-full h-full object-contain" />
+                {/* Iconos tecnologías - ajustados para responsive */}
+                <div className="absolute -top-4 sm:-top-6 right-8 sm:right-10 w-8 h-8 sm:w-12 sm:h-12 animate-float">
+                  <img 
+                    src="images/tech/react.jpg" 
+                    alt="React" 
+                    className="w-full h-full object-contain animate-spin-slow brightness-125"
+                  />
                 </div>
-                <div className="absolute top-1/2 -right-8 w-16 h-16">
-                  <img src="/images/html.png" alt="HTML" className="w-full h-full object-contain" />
+                <div className="absolute -bottom-4 sm:-bottom-6 left-8 sm:left-10 w-8 h-8 sm:w-12 sm:h-12 animate-float-delay">
+                  <img 
+                    src="images/tech/js.jpg" 
+                    alt="JavaScript" 
+                    className="w-full h-full object-contain brightness-125"
+                  />
+                </div>
+                <div className="absolute top-1/2 -right-4 sm:-right-6 w-8 h-8 sm:w-12 sm:h-12 animate-float-delay-2">
+                  <img 
+                    src="images/tech/html.jpg" 
+                    alt="HTML" 
+                    className="w-full h-full object-contain"
+                    style={{ filter: 'brightness(0.9)' }}
+                  />
                 </div>
               </div>
             </div>
@@ -144,12 +154,50 @@ function App() {
         </div>
       </section>
 
+      {/* Navbar - Mejorado para responsive */}
+      <nav className="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-black/80 backdrop-blur-sm shadow-lg">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex items-center justify-between py-4">
+              <a href="#" className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
+                <span className="text-white">&lt;</span>Alexandre<span className="text-white">/&gt;</span>
+              </a>
+              
+              {/* Mobile menu button */}
+              <button className="lg:hidden text-white hover:text-white/70 transition-colors p-2">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+              </button>
+
+              {/* Desktop menu */}
+              <div className="hidden lg:flex items-center gap-10">
+                <a href="#sobre-mi" className="text-white hover:text-white/70 transition-colors font-medium">Sobre mí</a>
+                <a href="#proyectos" className="text-white hover:text-white/70 transition-colors font-medium">Proyectos</a>
+                <a href="#logros" className="text-white hover:text-white/70 transition-colors font-medium">Logros</a>
+                <a href="#contacto" className="text-white hover:text-white/70 transition-colors font-medium">Contacto</a>
+              </div>
+            </div>
+
+            {/* Mobile menu panel */}
+            <div className="lg:hidden">
+              <div className="hidden py-4 space-y-4">
+                <a href="#sobre-mi" className="block text-white hover:text-white/70 transition-colors font-medium">Sobre mí</a>
+                <a href="#proyectos" className="block text-white hover:text-white/70 transition-colors font-medium">Proyectos</a>
+                <a href="#logros" className="block text-white hover:text-white/70 transition-colors font-medium">Logros</a>
+                <a href="#contacto" className="block text-white hover:text-white/70 transition-colors font-medium">Contacto</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
       {/* 2. ¿Quién Soy? Section */}
       <section id="sobre-mi" className="min-h-screen bg-gradient-to-b from-[#16213E] to-[#1a1a2e] py-20">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4">
           <h2 className="text-6xl font-bold text-center text-white mb-20">¿Quien Soy?</h2>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* ID Card */}
             <div className="relative w-full max-w-md mx-auto lg:mx-0 transform hover:scale-105 transition-transform duration-300">
               <div className="relative w-full aspect-[3/4] bg-gradient-to-br from-gray-900 to-black rounded-xl shadow-2xl overflow-hidden">
@@ -160,9 +208,9 @@ function App() {
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
                   <h3 className="text-2xl font-bold text-white mb-1">Alex Carnero</h3>
-                  <p className="text-gray-300">Frontend Developer</p>
-                  <div className="mt-3 h-1 w-32 bg-[#4ade80]"></div>
-                  <p className="text-sm text-gray-400 mt-2">www.alexcarnero.dev</p>
+                  <p className="text-gray-300">Estudiante de Empresa y Tecnología</p>
+                  <div className="mt-3 h-[1px] w-32 bg-white opacity-50"></div>
+                  <p className="text-sm text-gray-400 mt-2">22 años • Lugo, España</p>
                 </div>
               </div>
             </div>
@@ -170,16 +218,16 @@ function App() {
             {/* Description */}
             <div className="space-y-6 text-lg text-gray-300">
               <p className="leading-relaxed">
-                Soy Alex Carnero, y mi pasión por la tecnología, la programación y el diseño me impulsa cada día. Como desarrollador web, me he especializado en el fascinante mundo del FrontEnd.
+                Actualmente cursando mi tercer año en Empresa y Tecnología, combino mis estudios con una pasión creciente por la ciencia de datos y el desarrollo de proyectos tecnológicos innovadores.
               </p>
               <p className="leading-relaxed">
-                Disfruto desafiando los límites y explorando nuevas tecnologías para ofrecer soluciones creativas y efectivas.
+                Mi vida está marcada por el equilibrio entre tecnología y deporte. Como instructor de judo, he aprendido valores que aplico en cada proyecto: disciplina, perseverancia y trabajo en equipo. Actualmente, complemento esta experiencia con surf y yoga, buscando siempre nuevos desafíos.
               </p>
               <p className="leading-relaxed">
-                Innovador, proactivo y con capacidad para diseñar, crear y mantener sitios web atractivos e interactivos. Me adapto a las necesidades del equipo y me comprometo con los objetivos de trabajo establecidos.
+                Me destaco por mi espíritu inquieto y emprendedor, siempre involucrado en hackathons, programas de voluntariado y proyectos internacionales. Mi verdadera pasión radica en comunicar y vender ideas, conectando la tecnología con las personas a través de un mensaje claro y convincente.
               </p>
-              <button className="mt-8 bg-transparent border-2 border-[#4ade80] text-[#4ade80] px-8 py-3 rounded-full hover:bg-[#4ade80] hover:text-black transition-all duration-300">
-                Disponible para trabajar
+              <button className="mt-8 bg-transparent border border-white text-white px-8 py-3 rounded-full hover:bg-white/10 transition-all duration-300">
+                Abierto a nuevas oportunidades
               </button>
             </div>
           </div>
@@ -210,14 +258,14 @@ function App() {
                   Sitio web de venta y alquiler de propiedades con diversas funcionalidades del Framework NextJs
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 text-sm bg-[#2a2a4a] rounded-full text-[#4ade80]">TailwindCSS</span>
-                  <span className="px-3 py-1 text-sm bg-[#2a2a4a] rounded-full text-[#4ade80]">NextJs</span>
-                  <span className="px-3 py-1 text-sm bg-[#2a2a4a] rounded-full text-[#4ade80]">React</span>
+                  <span className="px-3 py-1 text-sm bg-[#2a2a4a] rounded-full text-white">TailwindCSS</span>
+                  <span className="px-3 py-1 text-sm bg-[#2a2a4a] rounded-full text-white">NextJs</span>
+                  <span className="px-3 py-1 text-sm bg-[#2a2a4a] rounded-full text-white">React</span>
                 </div>
                 <div className="flex gap-4 pt-4">
                   <a 
                     href="#" 
-                    className="px-6 py-2 bg-[#4ade80] text-black rounded-lg font-medium hover:bg-[#4ade80]/90 transition-all"
+                    className="px-6 py-2 bg-transparent border border-white text-white rounded-lg font-medium hover:bg-white/10 transition-all"
                   >
                     Sitio Web
                   </a>
@@ -225,7 +273,7 @@ function App() {
                     href="https://github.com/AlexCarnerooo/bienes-raices" 
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-2 border border-[#4ade80] text-[#4ade80] rounded-lg font-medium hover:bg-[#4ade80]/10 transition-all"
+                    className="px-6 py-2 border border-white text-white rounded-lg font-medium hover:bg-white/10 transition-all"
                   >
                     Github
                   </a>
@@ -248,14 +296,14 @@ function App() {
                   Sitio web de soluciones digitales en creaciones webs impactantes y efectivas, creado con Vite + React
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 text-sm bg-[#2a2a4a] rounded-full text-[#4ade80]">TailwindCSS</span>
-                  <span className="px-3 py-1 text-sm bg-[#2a2a4a] rounded-full text-[#4ade80]">Vite</span>
-                  <span className="px-3 py-1 text-sm bg-[#2a2a4a] rounded-full text-[#4ade80]">React</span>
+                  <span className="px-3 py-1 text-sm bg-[#2a2a4a] rounded-full text-white">TailwindCSS</span>
+                  <span className="px-3 py-1 text-sm bg-[#2a2a4a] rounded-full text-white">Vite</span>
+                  <span className="px-3 py-1 text-sm bg-[#2a2a4a] rounded-full text-white">React</span>
                 </div>
                 <div className="flex gap-4 pt-4">
                   <a 
                     href="#" 
-                    className="px-6 py-2 bg-[#4ade80] text-black rounded-lg font-medium hover:bg-[#4ade80]/90 transition-all"
+                    className="px-6 py-2 bg-transparent border border-white text-white rounded-lg font-medium hover:bg-white/10 transition-all"
                   >
                     Sitio Web
                   </a>
@@ -263,7 +311,7 @@ function App() {
                     href="https://github.com/AlexCarnerooo/landing-webtech" 
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-2 border border-[#4ade80] text-[#4ade80] rounded-lg font-medium hover:bg-[#4ade80]/10 transition-all"
+                    className="px-6 py-2 border border-white text-white rounded-lg font-medium hover:bg-white/10 transition-all"
                   >
                     Github
                   </a>
@@ -381,53 +429,107 @@ function App() {
       {/* 4. Logros Section */}
       <section id="logros" className="py-20 bg-gradient-to-b from-[#1a1a2e] to-[#15152d]">
         <div className="container mx-auto px-4">
-          <h2 className="text-5xl font-bold text-center text-white mb-16">Logros</h2>
+          <h2 className="text-6xl font-bold text-center text-white mb-8">Logros</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {/* Logro 1 */}
-            <div className="bg-[#1a1a2e]/50 p-6 rounded-xl backdrop-blur-sm hover:transform hover:scale-105 transition-all duration-300 shadow-xl">
-              <div className="relative aspect-video mb-6">
-                <img 
-                  src="/images/certificado1.jpg" 
-                  alt="Primer lugar Hackathon" 
-                  className="w-full h-full object-contain rounded-lg shadow-lg"
-                />
-                <button className="absolute bottom-4 right-4 bg-[#4ade80] text-black px-4 py-2 rounded-lg font-medium hover:bg-[#4ade80]/90 transition-all shadow-lg">
+            {/* Santander Explorer */}
+            <div className="bg-[#0a192f]/40 rounded-xl overflow-hidden backdrop-blur-sm border border-white/10 p-6">
+              <p className="text-gray-400 text-right mb-4">2023</p>
+              <div className="relative aspect-[4/3] mb-4 bg-white/5 rounded-lg overflow-hidden">
+                <iframe
+                  src="/docs/santander_explorer.pdf#toolbar=0&view=FitH"
+                  className="w-full h-full absolute inset-0"
+                  style={{ border: 'none' }}
+                ></iframe>
+                <div className="absolute inset-0 bg-black/20 pointer-events-none"></div>
+                <button 
+                  onClick={() => window.open('/docs/santander_explorer.pdf', '_blank')}
+                  className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-full transition-all duration-300 flex items-center gap-2 z-10"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
                   Ver Certificado
                 </button>
               </div>
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-2xl font-bold text-white">Primer lugar en Hackathon 2023</h3>
-                  <span className="text-[#4ade80]">21 de Junio de 2023</span>
-                </div>
-                <p className="text-gray-300">
-                  Proyecto Upskilling And Reskilling Challenge 2023 en colaboración con el BID y Ministerio de Economía.
-                </p>
-              </div>
+              <h3 className="text-2xl font-bold text-white mb-2">Santander Explorer</h3>
+              <p className="text-gray-300">Programa de emprendimiento e innovación del Banco Santander.</p>
             </div>
 
-            {/* Logro 2 */}
-            <div className="bg-[#1a1a2e]/50 p-6 rounded-xl backdrop-blur-sm hover:transform hover:scale-105 transition-all duration-300 shadow-xl">
-              <div className="relative aspect-video mb-6">
-                <img 
-                  src="/images/certificado2.jpg" 
-                  alt="Certificación Frontend" 
-                  className="w-full h-full object-contain rounded-lg shadow-lg"
-                />
-                <button className="absolute bottom-4 right-4 bg-[#4ade80] text-black px-4 py-2 rounded-lg font-medium hover:bg-[#4ade80]/90 transition-all shadow-lg">
+            {/* Green Olives */}
+            <div className="bg-[#0a192f]/40 rounded-xl overflow-hidden backdrop-blur-sm border border-white/10 p-6">
+              <p className="text-gray-400 text-right mb-4">2023</p>
+              <div className="relative aspect-[4/3] mb-4 bg-white/5 rounded-lg overflow-hidden">
+                <iframe
+                  src="/docs/green_olives.pdf#toolbar=0&view=FitH"
+                  className="w-full h-full absolute inset-0"
+                  style={{ border: 'none' }}
+                ></iframe>
+                <div className="absolute inset-0 bg-black/20 pointer-events-none"></div>
+                <button 
+                  onClick={() => window.open('/docs/green_olives.pdf', '_blank')}
+                  className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-full transition-all duration-300 flex items-center gap-2 z-10"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
                   Ver Certificado
                 </button>
               </div>
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-2xl font-bold text-white">Certificación Frontend Developer</h3>
-                  <span className="text-[#4ade80]">15 de Mayo de 2023</span>
-                </div>
-                <p className="text-gray-300">
-                  Especialización en desarrollo frontend con React y tecnologías modernas.
-                </p>
+              <h3 className="text-2xl font-bold text-white mb-2">Green Olives Project</h3>
+              <p className="text-gray-300">Proyecto internacional de sostenibilidad y desarrollo empresarial.</p>
+            </div>
+
+            {/* Monitor de Judo */}
+            <div className="bg-[#0a192f]/40 rounded-xl overflow-hidden backdrop-blur-sm border border-white/10 p-6">
+              <p className="text-gray-400 text-right mb-4">2023</p>
+              <div className="relative aspect-[4/3] mb-4 bg-white/5 rounded-lg overflow-hidden">
+                <iframe
+                  src="/docs/monitor_judo.pdf#toolbar=0&view=FitH"
+                  className="w-full h-full absolute inset-0"
+                  style={{ border: 'none' }}
+                ></iframe>
+                <div className="absolute inset-0 bg-black/20 pointer-events-none"></div>
+                <button 
+                  onClick={() => window.open('/docs/monitor_judo.pdf', '_blank')}
+                  className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-full transition-all duration-300 flex items-center gap-2 z-10"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                  Ver Certificado
+                </button>
               </div>
+              <h3 className="text-2xl font-bold text-white mb-2">Monitor de Judo</h3>
+              <p className="text-gray-300">Instructor certificado de judo, combinando disciplina deportiva con habilidades de liderazgo.</p>
+            </div>
+
+            {/* Contact Making Seminar */}
+            <div className="bg-[#0a192f]/40 rounded-xl overflow-hidden backdrop-blur-sm border border-white/10 p-6">
+              <p className="text-gray-400 text-right mb-4">2023</p>
+              <div className="relative aspect-[4/3] mb-4 bg-white/5 rounded-lg overflow-hidden">
+                <iframe
+                  src="/docs/contact_making_seminar.pdf#toolbar=0&view=FitH"
+                  className="w-full h-full absolute inset-0"
+                  style={{ border: 'none' }}
+                ></iframe>
+                <div className="absolute inset-0 bg-black/20 pointer-events-none"></div>
+                <button 
+                  onClick={() => window.open('/docs/contact_making_seminar.pdf', '_blank')}
+                  className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-full transition-all duration-300 flex items-center gap-2 z-10"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                  Ver Certificado
+                </button>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-2">Contact Making Seminar</h3>
+              <p className="text-gray-300">Participación en seminario internacional para el desarrollo de habilidades de networking.</p>
             </div>
           </div>
         </div>
@@ -477,7 +579,7 @@ function App() {
               </div>
               <button
                 type="submit"
-                className="w-full bg-[#4ade80] text-black py-3 rounded-lg font-medium hover:bg-[#4ade80]/90 transition-all"
+                className="w-full bg-transparent border border-white text-white py-3 rounded-lg font-medium hover:bg-white/10 transition-all"
                 disabled={status === 'sending'}
               >
                 {status === 'sending' ? 'Enviando...' : 'Enviar mensaje'}
