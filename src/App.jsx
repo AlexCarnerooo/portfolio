@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react'
 import emailjs from '@emailjs/browser'
 import profileImage from './assets/profile.jpg'
+import yogaWebImage from '../public/images/projects/web_yoga.png'
+import logo from './assets/logo.png'
 
 // Inicializar EmailJS
 emailjs.init("slXG_icFbWsZU8f2r");
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
+  const [showMore, setShowMore] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -68,9 +71,9 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1a1a2e] via-[#1a1a2e] to-[#0f172a] overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-[#1e1e3f] via-[#1e1e3f] to-[#1a1a35] overflow-x-hidden">
       {/* Hero Section */}
-      <section className="min-h-screen relative overflow-hidden flex items-center justify-center bg-gradient-to-b from-[#1a1a2e] to-[#16213E]">
+      <section className="min-h-screen relative overflow-hidden flex items-center justify-center bg-gradient-to-b from-[#1e1e3f] to-[#1a1a35]">
         <div className="absolute inset-0 bg-[url('/images/grid.png')] opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-6xl mx-auto">
@@ -126,27 +129,32 @@ function App() {
                   />
                 </div>
                 {/* Iconos tecnologías - ajustados para responsive */}
-                <div className="absolute -top-4 sm:-top-6 right-8 sm:right-10 w-8 h-8 sm:w-12 sm:h-12 animate-float">
-                  <img 
-                    src="images/tech/react.jpg" 
-                    alt="React" 
-                    className="w-full h-full object-contain animate-spin-slow brightness-125"
-                  />
+                <div className="absolute -top-6 sm:-top-8 right-8 sm:right-10 w-12 h-12 sm:w-16 sm:h-16 animate-float">
+                  <div className="w-full h-full rounded-xl bg-[#282C34] p-2 shadow-lg">
+                    <img 
+                      src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" 
+                      alt="React" 
+                      className="w-full h-full object-contain animate-spin-slow"
+                    />
+                  </div>
                 </div>
-                <div className="absolute -bottom-4 sm:-bottom-6 left-8 sm:left-10 w-8 h-8 sm:w-12 sm:h-12 animate-float-delay">
-                  <img 
-                    src="images/tech/js.jpg" 
-                    alt="JavaScript" 
-                    className="w-full h-full object-contain brightness-125"
-                  />
+                <div className="absolute -bottom-4 sm:-bottom-6 left-8 sm:left-10 w-12 h-12 sm:w-16 sm:h-16 animate-float-delay">
+                  <div className="w-full h-full rounded-xl bg-[#F7DF1E] p-2 shadow-lg">
+                    <img 
+                      src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" 
+                      alt="JavaScript" 
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
                 </div>
-                <div className="absolute top-1/2 -right-4 sm:-right-6 w-8 h-8 sm:w-12 sm:h-12 animate-float-delay-2">
-                  <img 
-                    src="images/tech/html.jpg" 
-                    alt="HTML" 
-                    className="w-full h-full object-contain"
-                    style={{ filter: 'brightness(0.9)' }}
-                  />
+                <div className="absolute top-1/2 -right-4 sm:-right-6 w-12 h-12 sm:w-16 sm:h-16 animate-float-delay-2">
+                  <div className="w-full h-full rounded-xl bg-[#3776AB] p-2 shadow-lg">
+                    <img 
+                      src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" 
+                      alt="Python" 
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -159,8 +167,22 @@ function App() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center justify-between py-4">
-              <a href="#" className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
-                <span className="text-white">&lt;</span>Alexandre<span className="text-white">/&gt;</span>
+              <a href="#" className="flex items-center group">
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-gradient-to-br from-blue-400 via-indigo-500 to-purple-500 rounded-lg flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-all duration-300">
+                    <span className="text-white font-bold text-xl">AC</span>
+                  </div>
+                  <div className="ml-3 flex flex-col">
+                    <span className="text-lg font-bold text-white tracking-wide">
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500">
+                        Alexandre
+                      </span>
+                    </span>
+                    <span className="text-sm text-gray-400 -mt-1">
+                      Carnero
+                    </span>
+                  </div>
+                </div>
               </a>
               
               {/* Mobile menu button */}
@@ -193,30 +215,30 @@ function App() {
       </nav>
 
       {/* 2. ¿Quién Soy? Section */}
-      <section id="sobre-mi" className="min-h-screen bg-gradient-to-b from-[#16213E] to-[#1a1a2e] py-20">
+      <section id="sobre-mi" className="py-12 bg-gradient-to-b from-[#1a1a35] to-[#1e1e3f]">
         <div className="container mx-auto px-4">
-          <h2 className="text-6xl font-bold text-center text-white mb-20">¿Quien Soy?</h2>
+          <h2 className="text-4xl font-bold text-center text-white mb-12">¿Quien Soy?</h2>
           
-          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* ID Card */}
-            <div className="relative w-full max-w-md mx-auto lg:mx-0 transform hover:scale-105 transition-transform duration-300">
-              <div className="relative w-full aspect-[3/4] bg-gradient-to-br from-gray-900 to-black rounded-xl shadow-2xl overflow-hidden">
+            <div className="relative w-full max-w-sm mx-auto lg:mx-0 transform hover:scale-105 transition-transform duration-300">
+              <div className="relative w-full aspect-[4/5] bg-gradient-to-br from-gray-900 to-black rounded-xl shadow-2xl overflow-hidden">
                 <img 
                   src={profileImage}
                   alt="Alex Carnero" 
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
-                  <h3 className="text-2xl font-bold text-white mb-1">Alex Carnero</h3>
-                  <p className="text-gray-300">Estudiante de Empresa y Tecnología</p>
-                  <div className="mt-3 h-[1px] w-32 bg-white opacity-50"></div>
-                  <p className="text-sm text-gray-400 mt-2">22 años • Lugo, España</p>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                  <h3 className="text-xl font-bold text-white mb-1">Alex Carnero</h3>
+                  <p className="text-sm text-gray-300">Estudiante de Empresa y Tecnología</p>
+                  <div className="mt-2 h-[1px] w-24 bg-white opacity-50"></div>
+                  <p className="text-xs text-gray-400 mt-2">22 años • Lugo, España</p>
                 </div>
               </div>
             </div>
 
             {/* Description */}
-            <div className="space-y-6 text-lg text-gray-300">
+            <div className="space-y-4 text-base text-gray-300">
               <p className="leading-relaxed">
                 Actualmente cursando mi tercer año en Empresa y Tecnología, combino mis estudios con una pasión creciente por la ciencia de datos y el desarrollo de proyectos tecnológicos innovadores.
               </p>
@@ -226,7 +248,7 @@ function App() {
               <p className="leading-relaxed">
                 Me destaco por mi espíritu inquieto y emprendedor, siempre involucrado en hackathons, programas de voluntariado y proyectos internacionales. Mi verdadera pasión radica en comunicar y vender ideas, conectando la tecnología con las personas a través de un mensaje claro y convincente.
               </p>
-              <button className="mt-8 bg-transparent border border-white text-white px-8 py-3 rounded-full hover:bg-white/10 transition-all duration-300">
+              <button className="mt-4 bg-transparent border border-white text-white px-6 py-2 rounded-full hover:bg-white/10 transition-all duration-300 text-sm">
                 Abierto a nuevas oportunidades
               </button>
             </div>
@@ -235,45 +257,48 @@ function App() {
       </section>
 
       {/* 3. Projects Section */}
-      <section id="proyectos" className="py-20 bg-gradient-to-b from-[#1a1a2e] to-[#15152d]">
+      <section id="proyectos" className="py-20 bg-gradient-to-b from-[#1e1e3f] to-[#1a1a35]">
         <div className="container mx-auto px-4">
           <h2 className="text-6xl font-bold text-center text-white mb-4">Proyectos</h2>
-          <p className="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
+          <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
             Una mezcla de análisis de datos, desarrollo web y proyectos de impacto social que reflejan mi pasión por la tecnología y los negocios.
           </p>
           
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Proyecto 1 - Bienes Raices */}
+          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Proyecto 1 - Yoga Website */}
             <div className="bg-[#20203a] rounded-xl overflow-hidden group hover:transform hover:scale-105 transition-all duration-300 shadow-xl">
-              <div className="relative aspect-video">
+              <div className="relative aspect-[16/9]">
                 <img 
-                  src="/images/bienes-raices.jpg" 
-                  alt="Proyecto Bienes Raices"
-                  className="w-full h-full object-cover"
+                  src={yogaWebImage}
+                  alt="Yoga Website"
+                  className="w-full h-full object-contain bg-[#1a1a2e]"
                 />
               </div>
-              <div className="p-6 space-y-4">
-                <h3 className="text-2xl font-bold text-white">Bienes Raices</h3>
-                <p className="text-gray-400">
-                  Sitio web de venta y alquiler de propiedades con diversas funcionalidades del Framework NextJs
+              <div className="p-5 space-y-3">
+                <h3 className="text-xl font-bold text-white">José Carnero Yoga</h3>
+                <p className="text-gray-400 text-sm">
+                  Sitio web profesional para instructor de yoga, con información sobre clases, eventos y recursos de meditación.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 text-sm bg-[#2a2a4a] rounded-full text-white">TailwindCSS</span>
-                  <span className="px-3 py-1 text-sm bg-[#2a2a4a] rounded-full text-white">NextJs</span>
-                  <span className="px-3 py-1 text-sm bg-[#2a2a4a] rounded-full text-white">React</span>
+                  <span className="px-2 py-1 text-xs bg-[#2a2a4a] rounded-full text-white">HTML</span>
+                  <span className="px-2 py-1 text-xs bg-[#2a2a4a] rounded-full text-white">CSS</span>
+                  <span className="px-2 py-1 text-xs bg-[#2a2a4a] rounded-full text-white">JavaScript</span>
+                  <span className="px-2 py-1 text-xs bg-[#2a2a4a] rounded-full text-white">Responsive</span>
                 </div>
-                <div className="flex gap-4 pt-4">
+                <div className="flex gap-3 pt-2">
                   <a 
-                    href="#" 
-                    className="px-6 py-2 bg-transparent border border-white text-white rounded-lg font-medium hover:bg-white/10 transition-all"
+                    href="https://josecarnero.org" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-1.5 bg-transparent border border-white text-white rounded-lg text-sm font-medium hover:bg-white/10 transition-all"
                   >
                     Sitio Web
                   </a>
                   <a 
-                    href="https://github.com/AlexCarnerooo/bienes-raices" 
+                    href="#" 
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-2 border border-white text-white rounded-lg font-medium hover:bg-white/10 transition-all"
+                    className="px-4 py-1.5 border border-white text-white rounded-lg text-sm font-medium hover:bg-white/10 transition-all"
                   >
                     Github
                   </a>
@@ -283,27 +308,27 @@ function App() {
 
             {/* Proyecto 2 - Landing Page Webtech */}
             <div className="bg-[#20203a] rounded-xl overflow-hidden group hover:transform hover:scale-105 transition-all duration-300 shadow-xl">
-              <div className="relative aspect-video">
+              <div className="relative aspect-[16/9]">
                 <img 
                   src="/images/landing-webtech.jpg" 
                   alt="Landing Page Webtech"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="p-6 space-y-4">
-                <h3 className="text-2xl font-bold text-white">Landing Page Webtech</h3>
-                <p className="text-gray-400">
+              <div className="p-5 space-y-3">
+                <h3 className="text-xl font-bold text-white">Landing Page Webtech</h3>
+                <p className="text-gray-400 text-sm">
                   Sitio web de soluciones digitales en creaciones webs impactantes y efectivas, creado con Vite + React
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 text-sm bg-[#2a2a4a] rounded-full text-white">TailwindCSS</span>
-                  <span className="px-3 py-1 text-sm bg-[#2a2a4a] rounded-full text-white">Vite</span>
-                  <span className="px-3 py-1 text-sm bg-[#2a2a4a] rounded-full text-white">React</span>
+                  <span className="px-2 py-1 text-xs bg-[#2a2a4a] rounded-full text-white">TailwindCSS</span>
+                  <span className="px-2 py-1 text-xs bg-[#2a2a4a] rounded-full text-white">Vite</span>
+                  <span className="px-2 py-1 text-xs bg-[#2a2a4a] rounded-full text-white">React</span>
                 </div>
-                <div className="flex gap-4 pt-4">
+                <div className="flex gap-3 pt-2">
                   <a 
                     href="#" 
-                    className="px-6 py-2 bg-transparent border border-white text-white rounded-lg font-medium hover:bg-white/10 transition-all"
+                    className="px-4 py-1.5 bg-transparent border border-white text-white rounded-lg text-sm font-medium hover:bg-white/10 transition-all"
                   >
                     Sitio Web
                   </a>
@@ -311,7 +336,7 @@ function App() {
                     href="https://github.com/AlexCarnerooo/landing-webtech" 
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-2 border border-white text-white rounded-lg font-medium hover:bg-white/10 transition-all"
+                    className="px-4 py-1.5 border border-white text-white rounded-lg text-sm font-medium hover:bg-white/10 transition-all"
                   >
                     Github
                   </a>
@@ -323,7 +348,7 @@ function App() {
       </section>
 
       {/* Skills Section */}
-      <section className="py-20 bg-gradient-to-b from-[#15152d] to-[#1a1a2e] overflow-hidden">
+      <section className="py-20 bg-gradient-to-b from-[#1a1a35] to-[#1e1e3f] overflow-hidden">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-white mb-4">Habilidades</h2>
           <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
@@ -332,8 +357,8 @@ function App() {
 
           <div className="relative max-w-4xl mx-auto">
             {/* Overlay gradients */}
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#15152d] to-transparent z-10"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#15152d] to-transparent z-10"></div>
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#1a1a35] to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#1a1a35] to-transparent z-10"></div>
 
             {/* First moving row */}
             <div className="flex justify-center overflow-hidden">
@@ -426,117 +451,227 @@ function App() {
         </div>
       </section>
 
-      {/* 4. Logros Section */}
-      <section id="logros" className="py-20 bg-gradient-to-b from-[#1a1a2e] to-[#15152d]">
+      {/* 4. Certificaciones Section */}
+      <section id="logros" className="py-20 bg-gradient-to-b from-[#1e1e3f] to-[#1a1a35]">
         <div className="container mx-auto px-4">
-          <h2 className="text-6xl font-bold text-center text-white mb-8">Logros</h2>
+          <h2 className="text-6xl font-bold text-center text-white mb-12">Certificaciones</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {/* Santander Explorer */}
-            <div className="bg-[#0a192f]/40 rounded-xl overflow-hidden backdrop-blur-sm border border-white/10 p-6">
-              <p className="text-gray-400 text-right mb-4">2023</p>
-              <div className="relative aspect-[4/3] mb-4 bg-white/5 rounded-lg overflow-hidden">
-                <iframe
-                  src="/docs/santander_explorer.pdf#toolbar=0&view=FitH"
-                  className="w-full h-full absolute inset-0"
-                  style={{ border: 'none' }}
-                ></iframe>
-                <div className="absolute inset-0 bg-black/20 pointer-events-none"></div>
-                <button 
-                  onClick={() => window.open('/docs/santander_explorer.pdf', '_blank')}
-                  className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-full transition-all duration-300 flex items-center gap-2 z-10"
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+          {/* Habilidades Diferenciales */}
+          <div className="mb-16">
+            <h3 className="text-3xl font-bold text-white mb-8 text-center">Habilidades Diferenciales</h3>
+            <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Liderazgo y Deporte */}
+              <div className="bg-[#20203a]/50 rounded-xl p-6 backdrop-blur-sm hover:transform hover:scale-105 transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-emerald-400 to-blue-500 rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
-                  Ver Certificado
-                </button>
+                </div>
+                <h4 className="text-xl font-bold text-white mb-3">Liderazgo Deportivo</h4>
+                <ul className="text-gray-300 space-y-2">
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+                    Monitor de Judo Certificado
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+                    Cinturón Negro 2º Dan
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+                    Gestión de equipos deportivos
+                  </li>
+                </ul>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2">Santander Explorer</h3>
-              <p className="text-gray-300">Programa de emprendimiento e innovación del Banco Santander.</p>
-            </div>
 
-            {/* Green Olives */}
-            <div className="bg-[#0a192f]/40 rounded-xl overflow-hidden backdrop-blur-sm border border-white/10 p-6">
-              <p className="text-gray-400 text-right mb-4">2023</p>
-              <div className="relative aspect-[4/3] mb-4 bg-white/5 rounded-lg overflow-hidden">
-                <iframe
-                  src="/docs/green_olives.pdf#toolbar=0&view=FitH"
-                  className="w-full h-full absolute inset-0"
-                  style={{ border: 'none' }}
-                ></iframe>
-                <div className="absolute inset-0 bg-black/20 pointer-events-none"></div>
-                <button 
-                  onClick={() => window.open('/docs/green_olives.pdf', '_blank')}
-                  className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-full transition-all duration-300 flex items-center gap-2 z-10"
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              {/* Habilidades Sociales */}
+              <div className="bg-[#20203a]/50 rounded-xl p-6 backdrop-blur-sm hover:transform hover:scale-105 transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
-                  Ver Certificado
-                </button>
+                </div>
+                <h4 className="text-xl font-bold text-white mb-3">Trabajo en Equipo</h4>
+                <ul className="text-gray-300 space-y-2">
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span>
+                    Voluntariado Internacional
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span>
+                    Proyectos Multiculturales
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span>
+                    Comunicación Efectiva
+                  </li>
+                </ul>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2">Green Olives Project</h3>
-              <p className="text-gray-300">Proyecto internacional de sostenibilidad y desarrollo empresarial.</p>
-            </div>
 
-            {/* Monitor de Judo */}
-            <div className="bg-[#0a192f]/40 rounded-xl overflow-hidden backdrop-blur-sm border border-white/10 p-6">
-              <p className="text-gray-400 text-right mb-4">2023</p>
-              <div className="relative aspect-[4/3] mb-4 bg-white/5 rounded-lg overflow-hidden">
-                <iframe
-                  src="/docs/monitor_judo.pdf#toolbar=0&view=FitH"
-                  className="w-full h-full absolute inset-0"
-                  style={{ border: 'none' }}
-                ></iframe>
-                <div className="absolute inset-0 bg-black/20 pointer-events-none"></div>
-                <button 
-                  onClick={() => window.open('/docs/monitor_judo.pdf', '_blank')}
-                  className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-full transition-all duration-300 flex items-center gap-2 z-10"
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              {/* Resolución de Problemas */}
+              <div className="bg-[#20203a]/50 rounded-xl p-6 backdrop-blur-sm hover:transform hover:scale-105 transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>
-                  Ver Certificado
-                </button>
+                </div>
+                <h4 className="text-xl font-bold text-white mb-3">Pensamiento Creativo</h4>
+                <ul className="text-gray-300 space-y-2">
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
+                    Resolución de Problemas
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
+                    Enfoque Práctico
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
+                    Innovación Continua
+                  </li>
+                </ul>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2">Monitor de Judo</h3>
-              <p className="text-gray-300">Instructor certificado de judo, combinando disciplina deportiva con habilidades de liderazgo.</p>
             </div>
+          </div>
 
-            {/* Contact Making Seminar */}
-            <div className="bg-[#0a192f]/40 rounded-xl overflow-hidden backdrop-blur-sm border border-white/10 p-6">
-              <p className="text-gray-400 text-right mb-4">2023</p>
-              <div className="relative aspect-[4/3] mb-4 bg-white/5 rounded-lg overflow-hidden">
-                <iframe
-                  src="/docs/contact_making_seminar.pdf#toolbar=0&view=FitH"
-                  className="w-full h-full absolute inset-0"
-                  style={{ border: 'none' }}
-                ></iframe>
-                <div className="absolute inset-0 bg-black/20 pointer-events-none"></div>
-                <button 
-                  onClick={() => window.open('/docs/contact_making_seminar.pdf', '_blank')}
-                  className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-full transition-all duration-300 flex items-center gap-2 z-10"
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                  </svg>
-                  Ver Certificado
-                </button>
+          {/* Certificaciones Técnicas */}
+          <div className="mb-16">
+            <h3 className="text-3xl font-bold text-white mb-8 text-center">Certificaciones Técnicas</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              {/* Santander Explorer */}
+              <div className="relative group">
+                <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+                  <img 
+                    src="images/certificates/santander_explorer.png" 
+                    alt="Santander Explorer Certificate"
+                    className="w-full h-full object-contain bg-[#1a1a2e]"
+                  />
+                  <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
+                    <p className="text-gray-400 text-sm">2023</p>
+                    <h3 className="text-xl font-bold text-white mb-1">Santander Explorer</h3>
+                    <p className="text-gray-300 text-sm mb-4">Programa de emprendimiento e innovación del Banco Santander.</p>
+                    <button 
+                      onClick={() => window.open('/docs/santander_explorer.pdf', '_blank')}
+                      className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full transition-all duration-300 flex items-center gap-2 text-sm w-fit mx-auto"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                      Ver Certificado
+                    </button>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2">Contact Making Seminar</h3>
-              <p className="text-gray-300">Participación en seminario internacional para el desarrollo de habilidades de networking.</p>
+
+              {/* Green Olives */}
+              <div className="relative group">
+                <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+                  <img 
+                    src="images/certificates/green_olives.png" 
+                    alt="Green Olives Certificate"
+                    className="w-full h-full object-contain bg-[#1a1a2e]"
+                  />
+                  <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
+                    <p className="text-gray-400 text-sm">2023</p>
+                    <h3 className="text-xl font-bold text-white mb-1">Green Olives Project</h3>
+                    <p className="text-gray-300 text-sm mb-4">Proyecto internacional de sostenibilidad y desarrollo empresarial.</p>
+                    <button 
+                      onClick={() => window.open('/docs/green_olives.pdf', '_blank')}
+                      className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full transition-all duration-300 flex items-center gap-2 text-sm w-fit mx-auto"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                      Ver Certificado
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Otros Certificados */}
+          <div>
+            <h3 className="text-3xl font-bold text-white mb-8 text-center">Otros Certificados</h3>
+            <div className={`grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto transition-all duration-500 ${showMore ? 'opacity-100' : 'opacity-40 max-h-[300px] overflow-hidden'}`}>
+              {/* Monitor de Judo */}
+              <div className="relative group">
+                <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+                  <img 
+                    src="images/certificates/monitor_judo.png" 
+                    alt="Monitor de Judo Certificate"
+                    className="w-full h-full object-contain bg-[#1a1a2e]"
+                  />
+                  <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
+                    <p className="text-gray-400 text-sm">2023</p>
+                    <h3 className="text-xl font-bold text-white mb-1">Monitor de Judo</h3>
+                    <p className="text-gray-300 text-sm mb-4">Instructor certificado de judo, combinando disciplina deportiva con habilidades de liderazgo.</p>
+                    <button 
+                      onClick={() => window.open('/docs/monitor_judo.pdf', '_blank')}
+                      className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full transition-all duration-300 flex items-center gap-2 text-sm w-fit mx-auto"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                      Ver Certificado
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Contact Making Seminar */}
+              <div className="relative group">
+                <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+                  <img 
+                    src="images/certificates/contact_making_seminar.png" 
+                    alt="Contact Making Seminar Certificate"
+                    className="w-full h-full object-contain bg-[#1a1a2e]"
+                  />
+                  <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
+                    <p className="text-gray-400 text-sm">2023</p>
+                    <h3 className="text-xl font-bold text-white mb-1">Contact Making Seminar</h3>
+                    <p className="text-gray-300 text-sm mb-4">Participación en seminario internacional para el desarrollo de habilidades de networking.</p>
+                    <button 
+                      onClick={() => window.open('/docs/contact_making_seminar.pdf', '_blank')}
+                      className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full transition-all duration-300 flex items-center gap-2 text-sm w-fit mx-auto"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                      Ver Certificado
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Botón Ver Más/Menos */}
+            <div className="text-center mt-8">
+              <button
+                onClick={() => setShowMore(!showMore)}
+                className="inline-flex items-center gap-2 px-6 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition-all duration-300"
+              >
+                <span>{showMore ? 'Ver Menos' : 'Ver Más'}</span>
+                <svg
+                  className={`w-4 h-4 transform transition-transform duration-300 ${showMore ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
       </section>
 
       {/* 5. Contact Form Section */}
-      <section id="contacto" className="py-20 bg-gradient-to-b from-[#1a1a2e] to-[#0f172a]">
+      <section id="contacto" className="py-20 bg-gradient-to-b from-[#1e1e3f] to-[#1a1a35]">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-white mb-12">Contacto</h2>
           <div className="max-w-lg mx-auto">

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="blue" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#5A9FD4"/>
+            <stop offset="100%" style="stop-color:#306998"/>
+        </linearGradient>
+        <linearGradient id="yellow" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#FFD43B"/>
+            <stop offset="100%" style="stop-color:#FFE873"/>
+        </linearGradient>
+    </defs>
+    <g>
+        <path fill="url(#blue)" d="M64 12c-24 0-22.5 10-22.5 10v10h23v3h-32s-15.5-1.8-15.5 22.5c0 24.3 13.4 23.5 13.4 23.5h8.1v-11.3s-0.4-13.4 13.2-13.4h22.8s12.8 0.2 12.8-12.4v-21s1.9-11-23.3-11zM50 19c2.3 0 4.2 1.9 4.2 4.2 0 2.3-1.9 4.2-4.2 4.2-2.3 0-4.2-1.9-4.2-4.2 0-2.3 1.9-4.2 4.2-4.2z"/>
+        <path fill="url(#yellow)" d="M64.1 116c24 0 22.5-10 22.5-10v-10h-23v-3h32s15.5 1.8 15.5-22.5c0-24.3-13.4-23.5-13.4-23.5h-8.1v11.3s0.4 13.4-13.2 13.4h-22.8s-12.8-0.2-12.8 12.4v21s-1.9 11 23.3 11zM78.1 109c-2.3 0-4.2-1.9-4.2-4.2 0-2.3 1.9-4.2 4.2-4.2 2.3 0 4.2 1.9 4.2 4.2 0 2.3-1.9 4.2-4.2 4.2z"/>
+    </g>
+</svg> 
