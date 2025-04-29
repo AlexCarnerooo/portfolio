@@ -94,11 +94,12 @@ function App() {
               </p>
               <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pt-4">
                 <a 
-                  href="/portfolio/Alexandre_Carnero_CV.pdf"
-                  download
+                  href="https://drive.google.com/file/d/1Hs_7QXeGD4VZA9BgcYhQX5tBtYG5ZXSJ/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full sm:w-auto group relative px-8 py-3 rounded-lg font-medium text-base lg:text-lg overflow-hidden">
                   <div className="absolute inset-0 w-0 bg-white transition-all duration-[250ms] ease-out group-hover:w-full"></div>
-                  <span className="relative text-white group-hover:text-black">Descargar CV</span>
+                  <span className="relative text-white group-hover:text-black">Ver CV</span>
                 </a>
                 <div className="flex gap-6">
                   <a href="https://linkedin.com/in/alexandre-carnero-1a1561283" target="_blank" rel="noopener noreferrer" 
