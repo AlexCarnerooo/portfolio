@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import emailjs from '@emailjs/browser'
 import profileImage from './assets/profile.jpg'
-import yogaWebImage from '../public/images/projects/web_yoga.png'
 import logo from './assets/logo.png'
 
 // Inicializar EmailJS
@@ -218,25 +217,36 @@ function App() {
       <section id="sobre-mi" className="py-12 bg-gradient-to-b from-[#1a1a35] to-[#1e1e3f]">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-white mb-12">¿Quien Soy?</h2>
-          
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            {/* ID Card */}
-            <div className="relative w-full max-w-sm mx-auto lg:mx-0 transform hover:scale-105 transition-transform duration-300">
-              <div className="relative w-full aspect-[4/5] bg-gradient-to-br from-gray-900 to-black rounded-xl shadow-2xl overflow-hidden">
-                <img 
-                  src={profileImage}
-                  alt="Alex Carnero" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
-                  <h3 className="text-xl font-bold text-white mb-1">Alex Carnero</h3>
-                  <p className="text-sm text-gray-300">Estudiante de Empresa y Tecnología</p>
-                  <div className="mt-2 h-[1px] w-24 bg-white opacity-50"></div>
-                  <p className="text-xs text-gray-400 mt-2">22 años • Lugo, España</p>
+            {/* ID Card estilo carnet profesional */}
+            <div className="flex flex-col items-center">
+              {/* Lanyard SVG */}
+              <svg width="120" height="80" viewBox="0 0 120 80" className="-mb-8 -mt-4 z-10" style={{filter:'drop-shadow(0 4px 8px rgba(0,0,0,0.3))'}}>
+                <g>
+                  <rect x="52" y="0" width="16" height="32" rx="8" fill="#b0b0b0"/>
+                  <rect x="56" y="28" width="8" height="16" rx="4" fill="#888"/>
+                  <rect x="58" y="40" width="4" height="16" rx="2" fill="#444"/>
+                  <path d="M60 56 Q60 70 20 78" stroke="#b0b0b0" strokeWidth="6" fill="none"/>
+                  <path d="M60 56 Q60 70 100 78" stroke="#b0b0b0" strokeWidth="6" fill="none"/>
+                </g>
+              </svg>
+              <div className="relative w-[270px] h-[370px] rotate-[-15deg] shadow-2xl rounded-xl bg-gradient-to-br from-black via-[#23232e] to-[#23232e] overflow-hidden border border-white/10">
+                {/* Foto más grande, sin franja celeste */}
+                <div className="w-full h-[180px] bg-white flex items-center justify-center z-20 relative p-0">
+                  <img src={profileImage} alt="Alex Carnero" className="w-full h-full object-cover object-center rounded-none shadow-lg border-0" />
+                </div>
+                {/* Nombre y rol */}
+                <div className="absolute bottom-24 left-0 w-full px-6">
+                  <h3 className="text-2xl font-bold text-white leading-tight whitespace-normal break-words">Alexandre Carnero</h3>
+                  <p className="text-base font-semibold whitespace-normal break-words text-[#2dd4bf]">Estudiante de Empresa y Tecnología</p>
+                </div>
+                {/* Línea y web/correo */}
+                <div className="absolute bottom-8 left-0 w-full flex flex-col items-center">
+                  <div className="w-48 h-[2px] bg-[#2dd4bf] mb-2 opacity-80"></div>
+                  <span className="text-xs text-white/80 tracking-wide">alexandrecarnerop@gmail.com</span>
                 </div>
               </div>
             </div>
-
             {/* Description */}
             <div className="space-y-4 text-base text-gray-300">
               <p className="leading-relaxed">
@@ -269,7 +279,7 @@ function App() {
             <div className="bg-[#20203a] rounded-xl overflow-hidden group hover:transform hover:scale-105 transition-all duration-300 shadow-xl">
               <div className="relative aspect-[16/9]">
                 <img 
-                  src={yogaWebImage}
+                  src="/images/projects/web_yoga.png"
                   alt="Yoga Website"
                   className="w-full h-full object-contain bg-[#1a1a2e]"
                 />
@@ -636,6 +646,58 @@ function App() {
                     <p className="text-gray-300 text-sm mb-4">Participación en seminario internacional para el desarrollo de habilidades de networking.</p>
                     <button 
                       onClick={() => window.open('/docs/contact_making_seminar.pdf', '_blank')}
+                      className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full transition-all duration-300 flex items-center gap-2 text-sm w-fit mx-auto"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                      Ver Certificado
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* USC Winner */}
+              <div className="relative group">
+                <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+                  <img 
+                    src="images/certificates/uscwinner.jpg" 
+                    alt="USC Winner Certificate"
+                    className="w-full h-full object-contain bg-[#1a1a2e]"
+                  />
+                  <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
+                    <p className="text-gray-400 text-sm">2024</p>
+                    <h3 className="text-xl font-bold text-white mb-1">USC Winner</h3>
+                    <p className="text-gray-300 text-sm mb-4">Reconocimiento por logros destacados en la Universidad de Santiago de Compostela.</p>
+                    <button 
+                      onClick={() => window.open('/docs/uscwinner.pdf', '_blank')}
+                      className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full transition-all duration-300 flex items-center gap-2 text-sm w-fit mx-auto"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                      Ver Certificado
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Hackathon Winner */}
+              <div className="relative group">
+                <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+                  <img 
+                    src="images/certificates/hackatonwinner.jpg" 
+                    alt="Hackathon Winner Certificate"
+                    className="w-full h-full object-contain bg-[#1a1a2e]"
+                  />
+                  <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
+                    <p className="text-gray-400 text-sm">2024</p>
+                    <h3 className="text-xl font-bold text-white mb-1">Hackathon Winner</h3>
+                    <p className="text-gray-300 text-sm mb-4">Ganador del hackathon de innovación y desarrollo tecnológico.</p>
+                    <button 
+                      onClick={() => window.open('/docs/hackatonwinner.pdf', '_blank')}
                       className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full transition-all duration-300 flex items-center gap-2 text-sm w-fit mx-auto"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

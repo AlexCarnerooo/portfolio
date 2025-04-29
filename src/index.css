@@ -17,9 +17,20 @@
     @apply relative text-white hover:text-white/70 transition-all duration-300;
   }
 
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform {
+    transform-style: preserve-3d;
+  }
+
+  .hover\:rotate-y-5:hover {
+    transform: rotateY(5deg);
+  }
+
   .id-card {
     @apply relative transform transition-all duration-500;
-    perspective: 1000px;
   }
 
   .id-card:hover {
@@ -103,19 +114,17 @@ nav {
 }
 
 /* Mobile Menu */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .mobile-menu {
-    @apply fixed top-16 left-0 w-full bg-black/90 backdrop-blur-sm py-4;
-    transform: translateY(-100%);
-    transition: transform 0.3s ease-in-out;
+    @apply fixed inset-0 bg-black/80 backdrop-blur-sm z-40 transform transition-transform duration-300 ease-in-out;
   }
 
-  .mobile-menu.active {
-    transform: translateY(0);
+  .mobile-menu.hidden {
+    transform: translateX(100%);
   }
 
-  .mobile-menu a {
-    @apply block py-2 px-4 text-center text-white hover:text-white/70 transition-colors;
+  .mobile-menu.visible {
+    transform: translateX(0);
   }
 }
 

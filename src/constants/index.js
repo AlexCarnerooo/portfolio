@@ -1,0 +1,128 @@
+export const projects = [
+  {
+    name: "Car Rent",
+    description:
+      "Una aplicación web para alquiler de autos que permite a los usuarios alquilar, buscar y explorar autos en su ubicación.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "mongodb",
+        color: "green-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: "/projects/carrent.png",
+    source_code_link: "https://github.com/",
+  },
+  {
+    name: "Job IT",
+    description:
+      "Aplicación web que permite a los usuarios buscar ofertas de trabajo, estimar rangos salariales para posiciones y localizar puestos disponibles basados en su ubicación actual.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "restapi",
+        color: "green-text-gradient",
+      },
+      {
+        name: "scss",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: "/projects/jobit.png",
+    source_code_link: "https://github.com/",
+  },
+  {
+    name: "Trip Guide",
+    description:
+      "Una aplicación web de viajes que permite a los usuarios planificar sus viajes, explorar destinos y reservar actividades.",
+    tags: [
+      {
+        name: "nextjs",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "supabase",
+        color: "green-text-gradient",
+      },
+      {
+        name: "css",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: "/projects/tripguide.png",
+    source_code_link: "https://github.com/",
+  },
+  {
+    name: "E-commerce Platform",
+    description:
+      "Plataforma de comercio electrónico completa con carrito de compras, sistema de pago y panel de administración.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "nodejs",
+        color: "green-text-gradient",
+      },
+      {
+        name: "mongodb",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: "/projects/ecommerce.png",
+    source_code_link: "https://github.com/",
+  },
+  {
+    name: "Social Media Dashboard",
+    description:
+      "Panel de control para redes sociales que muestra métricas, estadísticas y análisis de rendimiento.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "chartjs",
+        color: "green-text-gradient",
+      },
+      {
+        name: "firebase",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: "/projects/dashboard.png",
+    source_code_link: "https://github.com/",
+  },
+  {
+    name: "Fitness Tracker",
+    description:
+      "Aplicación para seguimiento de ejercicios y nutrición con estadísticas y planes personalizados.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "typescript",
+        color: "green-text-gradient",
+      },
+      {
+        name: "firebase",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: "/projects/fitnesstracker.png",
+    source_code_link: "https://github.com/",
+  },
+]; 
