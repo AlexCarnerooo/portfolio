@@ -17,7 +17,7 @@ export const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: "/projects/web_yoga.png",
+    image: "/portfolio/images/projects/web_yoga.png",
     source_code_link: "https://github.com/",
   },
   {
@@ -38,7 +38,7 @@ export const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: "/projects/songrecommender.png",
+    image: "/portfolio/images/projects/songrecommender.png",
     source_code_link: "https://github.com/AlexCarnerooo/songrecomender",
   },
   {

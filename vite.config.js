@@ -17,12 +17,16 @@ export default defineConfig({
       output: {
         manualChunks: undefined
       }
-    }
+    },
+    // Asegurarse de que los archivos estáticos se copien
+    copyPublicDir: true
   },
   resolve: {
     alias: {
       '@': '/src',
       '@assets': '/src/assets'
     }
-  }
+  },
+  // Configuración para manejar archivos estáticos
+  publicDir: 'public'
 }) 

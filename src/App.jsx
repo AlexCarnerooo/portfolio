@@ -557,7 +557,7 @@ function App() {
               <div className="relative group">
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
                   <img 
-                    src="/images/certificates/santander_explorer.png" 
+                    src="/portfolio/images/certificates/santander_explorer.png" 
                     alt="Santander Explorer Certificate"
                     className="w-full h-full object-contain bg-[#1a1a2e]"
                   />
@@ -566,7 +566,7 @@ function App() {
                     <h3 className="text-xl font-bold text-white mb-1">Santander Explorer</h3>
                     <p className="text-gray-300 text-sm mb-4">Programa de emprendimiento e innovación del Banco Santander.</p>
                     <button 
-                      onClick={() => window.open('/docs/santander_explorer.pdf', '_blank')}
+                      onClick={() => window.open('/portfolio/docs/santander_explorer.pdf', '_blank')}
                       className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full transition-all duration-300 flex items-center gap-2 text-sm w-fit mx-auto"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
