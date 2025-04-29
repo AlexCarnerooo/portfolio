@@ -95,19 +95,9 @@ function App() {
               </p>
               <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pt-4">
                 <a 
-                  href="#"
-                  onClick={async (e) => {
-                    e.preventDefault();
-                    try {
-                      const response = await fetch('/portfolio/cv-alexandre-carnero.pdf');
-                      if (!response.ok) throw new Error('Network response was not ok');
-                      const blob = await response.blob();
-                      saveAs(blob, 'cv-alexandre-carnero.pdf');
-                    } catch (error) {
-                      console.error('Error downloading CV:', error);
-                      alert('Error al descargar el CV. Por favor, inténtalo de nuevo.');
-                    }
-                  }}
+                  href="https://github.com/AlexCarnerooo/portfolio/raw/main/public/cv-alexandre-carnero.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full sm:w-auto group relative px-8 py-3 rounded-lg font-medium text-base lg:text-lg overflow-hidden"
                 >
                   <div className="absolute inset-0 w-0 bg-white transition-all duration-[250ms] ease-out group-hover:w-full"></div>
