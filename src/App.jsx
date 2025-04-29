@@ -288,7 +288,7 @@ function App() {
             <div className="bg-[#20203a] rounded-xl overflow-hidden group hover:transform hover:scale-105 transition-all duration-300 shadow-xl">
               <div className="relative aspect-[16/9]">
                 <img 
-                  src="/images/projects/web_yoga.png"
+                  src="/portfolio/images/projects/web_yoga.png"
                   alt="Yoga Website"
                   className="w-full h-full object-contain bg-[#1a1a2e]"
                 />
@@ -329,7 +329,7 @@ function App() {
             <div className="bg-[#20203a] rounded-xl overflow-hidden group hover:transform hover:scale-105 transition-all duration-300 shadow-xl">
               <div className="relative aspect-[16/9]">
                 <img 
-                  src="/images/projects/songrecommender.png" 
+                  src="/portfolio/images/projects/songrecommender.png" 
                   alt="Song Recommender"
                   className="w-full h-full object-cover"
                 />
@@ -583,7 +583,7 @@ function App() {
               <div className="relative group">
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
                   <img 
-                    src="/images/certificates/green_olives.png" 
+                    src="/portfolio/images/certificates/green_olives.png" 
                     alt="Green Olives Certificate"
                     className="w-full h-full object-contain bg-[#1a1a2e]"
                   />
@@ -615,7 +615,7 @@ function App() {
               <div className="relative group">
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
                   <img 
-                    src="/images/certificates/monitor_judo.png" 
+                    src="/portfolio/images/certificates/monitor_judo.png" 
                     alt="Monitor de Judo Certificate"
                     className="w-full h-full object-contain bg-[#1a1a2e]"
                   />
@@ -641,7 +641,7 @@ function App() {
               <div className="relative group">
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
                   <img 
-                    src="/images/certificates/contact_making_seminar.png" 
+                    src="/portfolio/images/certificates/contact_making_seminar.png" 
                     alt="Contact Making Seminar Certificate"
                     className="w-full h-full object-contain bg-[#1a1a2e]"
                   />
@@ -667,7 +667,7 @@ function App() {
               <div className="relative group">
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
                   <img 
-                    src="/images/certificates/uscwinner.jpg" 
+                    src="/portfolio/images/certificates/uscwinner.jpg" 
                     alt="USC Winner Certificate"
                     className="w-full h-full object-contain bg-[#1a1a2e]"
                   />
@@ -693,7 +693,7 @@ function App() {
               <div className="relative group">
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
                   <img 
-                    src="/images/certificates/hackatonwinner.jpg" 
+                    src="/portfolio/images/certificates/hackatonwinner.jpg" 
                     alt="Hackathon Winner Certificate"
                     className="w-full h-full object-contain bg-[#1a1a2e]"
                   />
@@ -719,7 +719,7 @@ function App() {
               <div className="relative group">
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
                   <img 
-                    src="/images/certificates/hackatonsecond.jpg" 
+                    src="/portfolio/images/certificates/hackatonsecond.jpg" 
                     alt="Hackathon Second Place Certificate"
                     className="w-full h-full object-contain bg-[#1a1a2e]"
                   />
@@ -745,7 +745,7 @@ function App() {
               <div className="relative group">
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
                   <img 
-                    src="/images/certificates/hotusafinalist.jpg" 
+                    src="/portfolio/images/certificates/hotusafinalist.jpg" 
                     alt="Hot USA Finalist Certificate"
                     className="w-full h-full object-contain bg-[#1a1a2e]"
                   />
