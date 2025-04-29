@@ -8,5 +8,21 @@ export default defineConfig({
   server: {
     host: true, // Habilita el acceso desde la red
     port: 5173 // Puerto por defecto
+  },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: true,
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
+  },
+  resolve: {
+    alias: {
+      '@': '/src',
+      '@assets': '/src/assets'
+    }
   }
 }) 
