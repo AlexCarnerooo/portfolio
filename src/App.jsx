@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import emailjs from '@emailjs/browser'
+import { saveAs } from 'file-saver'
 import profileImage from './assets/profile.jpg'
 import logo from './assets/logo.png'
 
@@ -94,18 +95,21 @@ function App() {
               </p>
               <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pt-4">
                 <a 
-                  href="/portfolio/Alexandre_Carnero_CV.pdf"
-                  download="Alexandre_Carnero_CV.pdf"
-                  onClick={(e) => {
+                  href="#"
+                  onClick={async (e) => {
                     e.preventDefault();
-                    const link = document.createElement('a');
-                    link.href = '/portfolio/Alexandre_Carnero_CV.pdf';
-                    link.download = 'Alexandre_Carnero_CV.pdf';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
+                    try {
+                      const response = await fetch('/portfolio/cv-alexandre-carnero.pdf');
+                      if (!response.ok) throw new Error('Network response was not ok');
+                      const blob = await response.blob();
+                      saveAs(blob, 'cv-alexandre-carnero.pdf');
+                    } catch (error) {
+                      console.error('Error downloading CV:', error);
+                      alert('Error al descargar el CV. Por favor, inténtalo de nuevo.');
+                    }
                   }}
-                  className="w-full sm:w-auto group relative px-8 py-3 rounded-lg font-medium text-base lg:text-lg overflow-hidden">
+                  className="w-full sm:w-auto group relative px-8 py-3 rounded-lg font-medium text-base lg:text-lg overflow-hidden"
+                >
                   <div className="absolute inset-0 w-0 bg-white transition-all duration-[250ms] ease-out group-hover:w-full"></div>
                   <span className="relative text-white group-hover:text-black">Descargar CV</span>
                 </a>
