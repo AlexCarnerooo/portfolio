@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo con gradiente moderno -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1DB954;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#191414;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#535353;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Filtro de brillo para efectos -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Fondo principal -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Ondas de música animadas -->
+  <g transform="translate(100,315)" stroke="#1DB954" stroke-width="3" fill="none">
+    <path d="M0,0 Q30,-30 60,0 T120,0 T180,0 T240,0" />
+    <path d="M300,0 Q330,-50 360,0 T420,0 T480,0 T540,0" />
+    <path d="M600,0 Q630,-20 660,0 T720,0 T780,0 T840,0" />
+  </g>
+  
+  <!-- Círculo central -->
+  <circle cx="600" cy="315" r="150" fill="#1DB954" opacity="0.9" filter="url(#glow)"/>
+  
+  <!-- Icono de música -->
+  <g transform="translate(520,235) scale(2)">
+    <path d="M60,20 L60,80 C60,90 45,95 35,90 C25,85 25,75 35,70 C45,65 60,70 60,80" 
+          fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="35" cy="80" r="8" fill="#FFFFFF"/>
+  </g>
+  
+  <!-- Título -->
+  <text x="600" y="450" font-family="Arial" font-size="60" fill="#FFFFFF" text-anchor="middle" filter="url(#glow)">
+    SongRecommender
+  </text>
+  
+  <!-- Subtítulo -->
+  <text x="600" y="520" font-family="Arial" font-size="30" fill="#1DB954" text-anchor="middle">
+    AI Music Recommendation System
+  </text>
+  
+  <!-- Tecnologías -->
+  <g transform="translate(400,560)">
+    <text x="0" y="0" font-family="Arial" font-size="24" fill="#FFFFFF">Python</text>
+    <text x="150" y="0" font-family="Arial" font-size="24" fill="#FFFFFF">Machine Learning</text>
+    <text x="350" y="0" font-family="Arial" font-size="24" fill="#FFFFFF">Flask</text>
+  </g>
+</svg> 

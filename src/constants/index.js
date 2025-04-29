@@ -1,5 +1,47 @@
 export const projects = [
   {
+    name: "Yoga Web",
+    description:
+      "Una aplicación web para clases de yoga en línea con videos, rutinas personalizadas y seguimiento de progreso.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "nodejs",
+        color: "green-text-gradient",
+      },
+      {
+        name: "mongodb",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: "/projects/web_yoga.png",
+    source_code_link: "https://github.com/",
+  },
+  {
+    name: "SongRecommender",
+    description:
+      "Sistema de recomendación de música que utiliza algoritmos de machine learning para sugerir canciones basadas en las preferencias del usuario y características musicales.",
+    tags: [
+      {
+        name: "python",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "machine-learning",
+        color: "green-text-gradient",
+      },
+      {
+        name: "flask",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: "/projects/songrecommender.png",
+    source_code_link: "https://github.com/AlexCarnerooo/songrecomender",
+  },
+  {
     name: "Car Rent",
     description:
       "Una aplicación web para alquiler de autos que permite a los usuarios alquilar, buscar y explorar autos en su ubicación.",

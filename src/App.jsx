@@ -9,6 +9,7 @@ emailjs.init("slXG_icFbWsZU8f2r");
 function App() {
   const [scrolled, setScrolled] = useState(false);
   const [showMore, setShowMore] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -71,8 +72,8 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#1e1e3f] via-[#1e1e3f] to-[#1a1a35] overflow-x-hidden">
-      {/* Hero Section */}
-      <section className="min-h-screen relative overflow-hidden flex items-center justify-center bg-gradient-to-b from-[#1e1e3f] to-[#1a1a35]">
+      {/* Hero Section with padding-top to prevent overlap */}
+      <section className="min-h-screen relative overflow-hidden flex items-center justify-center bg-gradient-to-b from-[#1e1e3f] to-[#1a1a35] pt-20">
         <div className="absolute inset-0 bg-[url('/images/grid.png')] opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-6xl mx-auto">
@@ -128,7 +129,7 @@ function App() {
                   />
                 </div>
                 {/* Iconos tecnologías - ajustados para responsive */}
-                <div className="absolute -top-6 sm:-top-8 right-8 sm:right-10 w-12 h-12 sm:w-16 sm:h-16 animate-float">
+                <div className="absolute top-1/4 -left-4 sm:-left-6 w-12 h-12 sm:w-16 sm:h-16 animate-float">
                   <div className="w-full h-full rounded-xl bg-[#282C34] p-2 shadow-lg">
                     <img 
                       src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" 
@@ -161,7 +162,7 @@ function App() {
         </div>
       </section>
 
-      {/* Navbar - Mejorado para responsive */}
+      {/* Navbar - Updated with mobile menu functionality */}
       <nav className="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-black/80 backdrop-blur-sm shadow-lg">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
@@ -185,9 +186,17 @@ function App() {
               </a>
               
               {/* Mobile menu button */}
-              <button className="lg:hidden text-white hover:text-white/70 transition-colors p-2">
+              <button 
+                className="lg:hidden text-white hover:text-white/70 transition-colors p-2"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}
+                  />
                 </svg>
               </button>
 
@@ -201,12 +210,12 @@ function App() {
             </div>
 
             {/* Mobile menu panel */}
-            <div className="lg:hidden">
-              <div className="hidden py-4 space-y-4">
-                <a href="#sobre-mi" className="block text-white hover:text-white/70 transition-colors font-medium">Sobre mí</a>
-                <a href="#proyectos" className="block text-white hover:text-white/70 transition-colors font-medium">Proyectos</a>
-                <a href="#logros" className="block text-white hover:text-white/70 transition-colors font-medium">Logros</a>
-                <a href="#contacto" className="block text-white hover:text-white/70 transition-colors font-medium">Contacto</a>
+            <div className={`lg:hidden ${mobileMenuOpen ? 'block' : 'hidden'}`}>
+              <div className="py-4 space-y-4">
+                <a href="#sobre-mi" onClick={() => setMobileMenuOpen(false)} className="block text-white hover:text-white/70 transition-colors font-medium">Sobre mí</a>
+                <a href="#proyectos" onClick={() => setMobileMenuOpen(false)} className="block text-white hover:text-white/70 transition-colors font-medium">Proyectos</a>
+                <a href="#logros" onClick={() => setMobileMenuOpen(false)} className="block text-white hover:text-white/70 transition-colors font-medium">Logros</a>
+                <a href="#contacto" onClick={() => setMobileMenuOpen(false)} className="block text-white hover:text-white/70 transition-colors font-medium">Contacto</a>
               </div>
             </div>
           </div>
@@ -316,34 +325,30 @@ function App() {
               </div>
             </div>
 
-            {/* Proyecto 2 - Landing Page Webtech */}
+            {/* Proyecto 2 - Song Recommender */}
             <div className="bg-[#20203a] rounded-xl overflow-hidden group hover:transform hover:scale-105 transition-all duration-300 shadow-xl">
               <div className="relative aspect-[16/9]">
                 <img 
-                  src="/images/landing-webtech.jpg" 
-                  alt="Landing Page Webtech"
+                  src="/images/projects/songrecommender.png" 
+                  alt="Song Recommender"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-5 space-y-3">
-                <h3 className="text-xl font-bold text-white">Landing Page Webtech</h3>
+                <h3 className="text-xl font-bold text-white">Song Recommender</h3>
                 <p className="text-gray-400 text-sm">
-                  Sitio web de soluciones digitales en creaciones webs impactantes y efectivas, creado con Vite + React
+                  Sistema de recomendación de música que utiliza machine learning para analizar preferencias musicales y sugerir canciones personalizadas. Integra la API de Spotify para acceder a una amplia biblioteca de música y características de las canciones.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-2 py-1 text-xs bg-[#2a2a4a] rounded-full text-white">TailwindCSS</span>
-                  <span className="px-2 py-1 text-xs bg-[#2a2a4a] rounded-full text-white">Vite</span>
-                  <span className="px-2 py-1 text-xs bg-[#2a2a4a] rounded-full text-white">React</span>
+                  <span className="px-2 py-1 text-xs bg-[#2a2a4a] rounded-full text-white">Python</span>
+                  <span className="px-2 py-1 text-xs bg-[#2a2a4a] rounded-full text-white">Machine Learning</span>
+                  <span className="px-2 py-1 text-xs bg-[#2a2a4a] rounded-full text-white">Spotify API</span>
+                  <span className="px-2 py-1 text-xs bg-[#2a2a4a] rounded-full text-white">Pandas</span>
+                  <span className="px-2 py-1 text-xs bg-[#2a2a4a] rounded-full text-white">Scikit-learn</span>
                 </div>
                 <div className="flex gap-3 pt-2">
                   <a 
-                    href="#" 
-                    className="px-4 py-1.5 bg-transparent border border-white text-white rounded-lg text-sm font-medium hover:bg-white/10 transition-all"
-                  >
-                    Sitio Web
-                  </a>
-                  <a 
-                    href="https://github.com/AlexCarnerooo/landing-webtech" 
+                    href="https://github.com/AlexCarnerooo/Song-Recommender" 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-4 py-1.5 border border-white text-white rounded-lg text-sm font-medium hover:bg-white/10 transition-all"
@@ -552,7 +557,7 @@ function App() {
               <div className="relative group">
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
                   <img 
-                    src="images/certificates/santander_explorer.png" 
+                    src="/images/certificates/santander_explorer.png" 
                     alt="Santander Explorer Certificate"
                     className="w-full h-full object-contain bg-[#1a1a2e]"
                   />
@@ -578,7 +583,7 @@ function App() {
               <div className="relative group">
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
                   <img 
-                    src="images/certificates/green_olives.png" 
+                    src="/images/certificates/green_olives.png" 
                     alt="Green Olives Certificate"
                     className="w-full h-full object-contain bg-[#1a1a2e]"
                   />
@@ -605,12 +610,12 @@ function App() {
           {/* Otros Certificados */}
           <div>
             <h3 className="text-3xl font-bold text-white mb-8 text-center">Otros Certificados</h3>
-            <div className={`grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto transition-all duration-500 ${showMore ? 'opacity-100' : 'opacity-40 max-h-[300px] overflow-hidden'}`}>
+            <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto transition-all duration-500 ${showMore ? 'opacity-100' : 'opacity-40 max-h-[300px] overflow-hidden'}`}>
               {/* Monitor de Judo */}
               <div className="relative group">
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
                   <img 
-                    src="images/certificates/monitor_judo.png" 
+                    src="/images/certificates/monitor_judo.png" 
                     alt="Monitor de Judo Certificate"
                     className="w-full h-full object-contain bg-[#1a1a2e]"
                   />
@@ -636,7 +641,7 @@ function App() {
               <div className="relative group">
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
                   <img 
-                    src="images/certificates/contact_making_seminar.png" 
+                    src="/images/certificates/contact_making_seminar.png" 
                     alt="Contact Making Seminar Certificate"
                     className="w-full h-full object-contain bg-[#1a1a2e]"
                   />
@@ -662,7 +667,7 @@ function App() {
               <div className="relative group">
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
                   <img 
-                    src="images/certificates/uscwinner.jpg" 
+                    src="/images/certificates/uscwinner.jpg" 
                     alt="USC Winner Certificate"
                     className="w-full h-full object-contain bg-[#1a1a2e]"
                   />
@@ -688,7 +693,7 @@ function App() {
               <div className="relative group">
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
                   <img 
-                    src="images/certificates/hackatonwinner.jpg" 
+                    src="/images/certificates/hackatonwinner.jpg" 
                     alt="Hackathon Winner Certificate"
                     className="w-full h-full object-contain bg-[#1a1a2e]"
                   />
@@ -698,6 +703,58 @@ function App() {
                     <p className="text-gray-300 text-sm mb-4">Ganador del hackathon de innovación y desarrollo tecnológico.</p>
                     <button 
                       onClick={() => window.open('/docs/hackatonwinner.pdf', '_blank')}
+                      className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full transition-all duration-300 flex items-center gap-2 text-sm w-fit mx-auto"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                      Ver Certificado
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Hackathon Second */}
+              <div className="relative group">
+                <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+                  <img 
+                    src="/images/certificates/hackatonsecond.jpg" 
+                    alt="Hackathon Second Place Certificate"
+                    className="w-full h-full object-contain bg-[#1a1a2e]"
+                  />
+                  <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
+                    <p className="text-gray-400 text-sm">2024</p>
+                    <h3 className="text-xl font-bold text-white mb-1">Hackathon Second Place</h3>
+                    <p className="text-gray-300 text-sm mb-4">Segundo puesto en hackathon de innovación tecnológica.</p>
+                    <button 
+                      onClick={() => window.open('/docs/hackatonsecond.pdf', '_blank')}
+                      className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full transition-all duration-300 flex items-center gap-2 text-sm w-fit mx-auto"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                      Ver Certificado
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Hot USA Finalist */}
+              <div className="relative group">
+                <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+                  <img 
+                    src="/images/certificates/hotusafinalist.jpg" 
+                    alt="Hot USA Finalist Certificate"
+                    className="w-full h-full object-contain bg-[#1a1a2e]"
+                  />
+                  <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
+                    <p className="text-gray-400 text-sm">2024</p>
+                    <h3 className="text-xl font-bold text-white mb-1">Hot USA Finalist</h3>
+                    <p className="text-gray-300 text-sm mb-4">Finalista en el programa de emprendimiento Hot USA.</p>
+                    <button 
+                      onClick={() => window.open('/docs/hotusafinalist.pdf', '_blank')}
                       className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full transition-all duration-300 flex items-center gap-2 text-sm w-fit mx-auto"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
