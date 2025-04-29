@@ -94,15 +94,17 @@ function App() {
                 Combinando innovación tecnológica con perspectiva internacional para crear soluciones de impacto.
               </p>
               <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pt-4">
-                <a 
-                  href="https://github.com/AlexCarnerooo/portfolio/raw/main/public/cv-alexandre-carnero.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button 
+                  onClick={() => {
+                    const fileId = "1aIEM-ixpNCKAr-p7YwiHRRGj21u16HbR";
+                    const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+                    window.open(downloadUrl, '_blank');
+                  }}
                   className="w-full sm:w-auto group relative px-8 py-3 rounded-lg font-medium text-base lg:text-lg overflow-hidden"
                 >
                   <div className="absolute inset-0 w-0 bg-white transition-all duration-[250ms] ease-out group-hover:w-full"></div>
                   <span className="relative text-white group-hover:text-black">Descargar CV</span>
-                </a>
+                </button>
                 <div className="flex gap-6">
                   <a href="https://linkedin.com/in/alexandre-carnero-1a1561283" target="_blank" rel="noopener noreferrer" 
                      className="text-white/70 hover:text-white transition-colors transform hover:scale-110 duration-200">
