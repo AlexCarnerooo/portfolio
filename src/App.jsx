@@ -94,7 +94,7 @@ function App() {
               </p>
               <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pt-4">
                 <a 
-                  href="/docs/cv.pdf"
+                  href="/portfolio/docs/cv.pdf"
                   download
                   className="w-full sm:w-auto group relative px-8 py-3 rounded-lg font-medium text-base lg:text-lg overflow-hidden">
                   <div className="absolute inset-0 w-0 bg-white transition-all duration-[250ms] ease-out group-hover:w-full"></div>
@@ -566,7 +566,7 @@ function App() {
                     <h3 className="text-xl font-bold text-white mb-1">Santander Explorer</h3>
                     <p className="text-gray-300 text-sm mb-4">Programa de emprendimiento e innovación del Banco Santander.</p>
                     <button 
-                      onClick={() => window.open('/images/certificates/santander_explorer.pdf', '_blank')}
+                      onClick={() => window.open('/portfolio/images/certificates/santander_explorer.pdf', '_blank')}
                       className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full transition-all duration-300 flex items-center gap-2 text-sm w-fit mx-auto"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -592,7 +592,7 @@ function App() {
                     <h3 className="text-xl font-bold text-white mb-1">Green Olives Project</h3>
                     <p className="text-gray-300 text-sm mb-4">Proyecto internacional de sostenibilidad y desarrollo empresarial.</p>
                     <button 
-                      onClick={() => window.open('/images/certificates/green_olives.pdf', '_blank')}
+                      onClick={() => window.open('/portfolio/images/certificates/green_olives.pdf', '_blank')}
                       className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full transition-all duration-300 flex items-center gap-2 text-sm w-fit mx-auto"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -624,7 +624,7 @@ function App() {
                     <h3 className="text-xl font-bold text-white mb-1">Monitor de Judo</h3>
                     <p className="text-gray-300 text-sm mb-4">Instructor certificado de judo, combinando disciplina deportiva con habilidades de liderazgo.</p>
                     <button 
-                      onClick={() => window.open('/images/certificates/monitor_judo.pdf', '_blank')}
+                      onClick={() => window.open('/portfolio/images/certificates/monitor_judo.pdf', '_blank')}
                       className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full transition-all duration-300 flex items-center gap-2 text-sm w-fit mx-auto"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -650,7 +650,7 @@ function App() {
                     <h3 className="text-xl font-bold text-white mb-1">Contact Making Seminar</h3>
                     <p className="text-gray-300 text-sm mb-4">Participación en seminario internacional para el desarrollo de habilidades de networking.</p>
                     <button 
-                      onClick={() => window.open('/images/certificates/contact_making_seminar.pdf', '_blank')}
+                      onClick={() => window.open('/portfolio/images/certificates/contact_making_seminar.pdf', '_blank')}
                       className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full transition-all duration-300 flex items-center gap-2 text-sm w-fit mx-auto"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -676,7 +676,7 @@ function App() {
                     <h3 className="text-xl font-bold text-white mb-1">USC Winner</h3>
                     <p className="text-gray-300 text-sm mb-4">Reconocimiento por logros destacados en la Universidad de Santiago de Compostela.</p>
                     <button 
-                      onClick={() => window.open('/images/certificates/uscwinner.pdf', '_blank')}
+                      onClick={() => window.open('/portfolio/images/certificates/uscwinner.pdf', '_blank')}
                       className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full transition-all duration-300 flex items-center gap-2 text-sm w-fit mx-auto"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -702,7 +702,7 @@ function App() {
                     <h3 className="text-xl font-bold text-white mb-1">Hackathon Winner</h3>
                     <p className="text-gray-300 text-sm mb-4">Ganador del hackathon de innovación y desarrollo tecnológico.</p>
                     <button 
-                      onClick={() => window.open('/images/certificates/hackatonwinner.pdf', '_blank')}
+                      onClick={() => window.open('/portfolio/images/certificates/hackatonwinner.pdf', '_blank')}
                       className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full transition-all duration-300 flex items-center gap-2 text-sm w-fit mx-auto"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -728,7 +728,7 @@ function App() {
                     <h3 className="text-xl font-bold text-white mb-1">Hackathon Second Place</h3>
                     <p className="text-gray-300 text-sm mb-4">Segundo puesto en hackathon de innovación tecnológica.</p>
                     <button 
-                      onClick={() => window.open('/images/certificates/hackatonsecond.pdf', '_blank')}
+                      onClick={() => window.open('/portfolio/images/certificates/hackatonsecond.pdf', '_blank')}
                       className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full transition-all duration-300 flex items-center gap-2 text-sm w-fit mx-auto"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -754,7 +754,7 @@ function App() {
                     <h3 className="text-xl font-bold text-white mb-1">Hot USA Finalist</h3>
                     <p className="text-gray-300 text-sm mb-4">Finalista en el programa de emprendimiento Hot USA.</p>
                     <button 
-                      onClick={() => window.open('/images/certificates/hotusafinalist.pdf', '_blank')}
+                      onClick={() => window.open('/portfolio/images/certificates/hotusafinalist.pdf', '_blank')}
                       className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full transition-all duration-300 flex items-center gap-2 text-sm w-fit mx-auto"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
