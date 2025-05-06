@@ -15,6 +15,7 @@
     <link rel="icon" type="image/jpeg" href="/portfolio/favicon.jpg" sizes="32x32" />
     <link rel="manifest" href="/portfolio/manifest.json" />
     <meta name="theme-color" content="#1e1e3f" />
+    <link rel="preload" as="image" href="/portfolio/images/profile.webp" type="image/webp" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -43,7 +44,20 @@
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <picture>
+        <source srcSet="/portfolio/images/profile.webp" type="image/webp" />
+        <img
+          src="/portfolio/images/profile.jpg"
+          alt="Foto de perfil de Alexandre Carnero"
+          width="600"
+          height="600"
+          style="max-width: 100%; height: auto;"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </picture>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html> 
