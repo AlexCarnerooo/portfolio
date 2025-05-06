@@ -1,0 +1,16 @@
+{
+  "name": "Alexandre Carnero Portfolio",
+  "short_name": "Portfolio",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#1e1e3f",
+  "description": "Portfolio de Alexandre Carnero",
+  "icons": [
+    {
+      "src": "favicon.jpg",
+      "sizes": "32x32",
+      "type": "image/jpeg"
+    }
+  ],
+  "theme_color": "#1e1e3f"
+} 
