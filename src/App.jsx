@@ -54,7 +54,7 @@ function App() {
       );
 
       console.log('SUCCESS!', result.text);
-      setStatus('success');
+        setStatus('success');
       form.current.reset();
     } catch (error) {
       console.log('FAILED...', error);
@@ -418,7 +418,7 @@ function App() {
       <section id="logros" className="py-20 bg-gradient-to-b from-[#1e1e3f] to-[#1a1a35]">
         <div className="container mx-auto px-4">
           <h2 className="text-6xl font-bold text-center text-white mb-12">Certificaciones</h2>
-          
+
           {/* Certificaciones Técnicas */}
           <div className="mb-16">
             <h3 className="text-3xl font-bold text-white mb-8 text-center">Certificaciones Técnicas</h3>
