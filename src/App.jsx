@@ -3,9 +3,12 @@ import emailjs from '@emailjs/browser'
 import { saveAs } from 'file-saver'
 import profileImage from './assets/profile.jpg'
 import logo from './assets/logo.png'
+import ContactForm from './ContactForm'
 
 // Inicializar EmailJS con tu clave pública
 emailjs.init("slXG_icFbWsZU8f2r");
+
+const heroImage = '/portfolio/images/presentandoAtlic.jpg';
 
 function App() {
   const form = useRef();
@@ -81,6 +84,7 @@ function App() {
     { src: '/portfolio/images/logos/javascript.svg', alt: 'JavaScript' },
   ];
   const infiniteLogos = [...skillLogos, ...skillLogos];
+  const infiniteLogosReverse = [...[...skillLogos].reverse(), ...[...skillLogos].reverse()];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#1e1e3f] via-[#1e1e3f] to-[#1a1a35] overflow-x-hidden">
@@ -131,14 +135,14 @@ function App() {
               </div>
             </div>
 
-            {/* Image */}
+            {/* Image (Hero) */}
             <div className="relative fade-in-right flex items-center justify-center order-1 lg:order-2">
               <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[400px] md:h-[400px] transform hover:scale-105 transition-all duration-500">
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent rounded-full"></div>
                 <div className="w-full h-full rounded-full border border-white/10 overflow-hidden shadow-2xl">
                   <img
-                    src={profileImage}
-                    alt="Alexandre Carnero"
+                    src={heroImage}
+                    alt="Alexandre Carnero Hero"
                     className="w-full h-full object-cover object-center"
                   />
                 </div>
@@ -391,14 +395,16 @@ function App() {
             <div className="overflow-hidden w-full">
               <div className="flex flex-col gap-6">
                 {/* Fila 1 */}
-                <div className="flex gap-16 animate-marquee items-center py-4">
+                <div className="flex gap-16 animate-marquee items-center py-4 
+                  sm:gap-16 sm:py-4 gap-8 py-2">
                   {infiniteLogos.map((logo, idx) => (
-                    <img key={idx} src={logo.src} alt={logo.alt} className="w-28 h-28 object-contain drop-shadow-lg" />
+                    <img key={idx} src={logo.src} alt={logo.alt} 
+                      className="w-28 h-28 sm:w-28 sm:h-28 w-16 h-16 object-contain drop-shadow-lg" />
                   ))}
                 </div>
-                {/* Fila 2 inversa */}
-                <div className="flex gap-16 animate-marquee-reverse items-center py-4">
-                  {infiniteLogos.map((logo, idx) => (
+                {/* Fila 2 inversa, solo visible en sm+ */}
+                <div className="hidden sm:flex gap-16 animate-marquee-reverse items-center py-4">
+                  {infiniteLogosReverse.map((logo, idx) => (
                     <img key={idx} src={logo.src} alt={logo.alt} className="w-28 h-28 object-contain drop-shadow-lg" />
                   ))}
                 </div>
@@ -658,63 +664,7 @@ function App() {
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-white mb-12">Contacto</h2>
           <div className="max-w-lg mx-auto">
-            <form ref={form} onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-white mb-2">Nombre</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="from_name"
-                  required
-                  className="w-full px-4 py-2 rounded-lg bg-white/10 border border-gray-600 text-white focus:outline-none focus:border-[#4ade80]"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-white mb-2">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="from_email"
-                  required
-                  className="w-full px-4 py-2 rounded-lg bg-white/10 border border-gray-600 text-white focus:outline-none focus:border-[#4ade80]"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-white mb-2">Mensaje</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows="4"
-                  className="w-full px-4 py-2 rounded-lg bg-white/10 border border-gray-600 text-white focus:outline-none focus:border-[#4ade80]"
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-transparent border border-white text-white py-3 rounded-lg font-medium hover:bg-white/10 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                disabled={status === 'sending'}
-              >
-                {status === 'sending' ? (
-                  <span className="flex items-center justify-center">
-                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    Enviando...
-                  </span>
-                ) : 'Enviar mensaje'}
-              </button>
-              {status === 'success' && (
-                <div className="text-green-400 text-center p-3 bg-green-400/10 rounded-lg">
-                  ¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto.
-                </div>
-              )}
-              {status === 'error' && (
-                <div className="text-red-400 text-center p-3 bg-red-400/10 rounded-lg">
-                  Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.
-                </div>
-              )}
-            </form>
+            <ContactForm />
           </div>
         </div>
       </section>

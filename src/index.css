@@ -145,6 +145,13 @@ nav {
   p {
     @apply text-base;
   }
+
+  .animate-marquee {
+    animation-duration: 40s !important;
+  }
+  .animate-marquee-reverse {
+    animation-duration: 44s !important;
+  }
 }
 
 /* Card Hover Effects */
