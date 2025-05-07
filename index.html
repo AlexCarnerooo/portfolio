@@ -46,6 +46,8 @@
   <body>
     <div id="root">
       <picture>
+        <source srcSet="/portfolio/images/mobile_profile.webp" type="image/webp" media="(max-width: 600px)" />
+        <source srcSet="/portfolio/images/mobile_profile.jpg" type="image/jpeg" media="(max-width: 600px)" />
         <source srcSet="/portfolio/images/profile.webp" type="image/webp" />
         <img
           src="/portfolio/images/profile.jpg"
@@ -55,6 +57,7 @@
           style="max-width: 100%; height: auto;"
           fetchpriority="high"
           decoding="async"
+          loading="lazy"
         />
       </picture>
     </div>
