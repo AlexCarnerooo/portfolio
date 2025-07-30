@@ -17,7 +17,8 @@ export const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: "/portfolio/images/projects/web_yoga.png",
+    image: "/portfolio/images/projects/web_yoga.webp",
+    imageMobile: "/portfolio/images/projects/mobile_web_yoga.webp",
     source_code_link: "https://github.com/",
   },
   {
@@ -38,7 +39,8 @@ export const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: "/portfolio/images/projects/songrecommender.png",
+    image: "/portfolio/images/projects/songrecommender.webp",
+    imageMobile: "/portfolio/images/projects/mobile_songrecommender.webp",
     source_code_link: "https://github.com/AlexCarnerooo/songrecomender",
   },
   {
