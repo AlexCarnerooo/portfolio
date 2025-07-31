@@ -479,7 +479,7 @@ function App() {
           {/* Otros Certificados */}
           <div>
             <h3 className="text-3xl font-bold text-white mb-8 text-center">Otros Certificados</h3>
-            <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto transition-all duration-700 ease-in-out ${showMore ? 'opacity-100 max-h-[2000px]' : 'opacity-40 max-h-[300px] overflow-hidden'}`}>
+            <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto transition-all duration-700 ease-in-out ${showMore ? 'opacity-100 max-h-[2000px]' : 'opacity-40 max-h-[250px] sm:max-h-[400px] lg:max-h-[450px] overflow-hidden'}`}>
               {/* Monitor de Judo */}
               <div className="relative group">
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
