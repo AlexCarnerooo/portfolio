@@ -102,11 +102,10 @@ function App() {
                 Carnero
               </h1>
               <h3 className="text-2xl sm:text-3xl md:text-4xl text-white/90 font-medium">
-                Desarrollador en Formación
+                Fullstack AI Developer
               </h3>
               <p className="text-gray-300 text-base sm:text-lg md:text-xl max-w-lg">
-                Profesional en formación especializado en programación, IA y análisis de datos. 
-                Combinando innovación tecnológica con perspectiva internacional para crear soluciones de impacto.
+                Trabajo en el desarrollo de soluciones inteligentes que integran automatización, análisis de datos y arquitectura full-stack. Actualmente formo parte de Novatech, donde diseño sistemas de inteligencia artificial personalizados para empresas que buscan decisiones más eficientes y procesos más conectados.
               </p>
               <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pt-4">
                 <a 
@@ -277,13 +276,13 @@ function App() {
             {/* Description */}
             <div className="space-y-4 text-base text-gray-300">
               <p className="leading-relaxed">
-                Actualmente cursando mi tercer año en Empresa y Tecnología, combino mis estudios con una pasión creciente por la ciencia de datos y el desarrollo de proyectos tecnológicos innovadores.
+                Soy estudiante de último curso en el grado de Empresa y Tecnología, con un perfil centrado en inteligencia artificial, programación y análisis de datos. Combino el enfoque técnico con una visión de negocio para construir soluciones que realmente aportan valor.
               </p>
               <p className="leading-relaxed">
-                Mi vida está marcada por el equilibrio entre tecnología y deporte. Como instructor de judo, he aprendido valores que aplico en cada proyecto: disciplina, perseverancia y trabajo en equipo. Actualmente, complemento esta experiencia con surf y yoga, buscando siempre nuevos desafíos.
+                Mi vida siempre ha estado marcada por el equilibrio entre tecnología y deporte. Como instructor de judo, he desarrollado una forma de trabajar basada en la disciplina, la perseverancia y el trabajo en equipo. Hoy complemento esa energía con surf y yoga, buscando mantener la mente enfocada y activa.
               </p>
               <p className="leading-relaxed">
-                Me destaco por mi espíritu inquieto y emprendedor, siempre involucrado en hackathons, programas de voluntariado y proyectos internacionales. Mi verdadera pasión radica en comunicar y vender ideas, conectando la tecnología con las personas a través de un mensaje claro y convincente.
+                Tengo una actitud inquieta y emprendedora. He participado en hackathons, voluntariados internacionales y proyectos multidisciplinares, siempre con la motivación de aprender algo nuevo y generar impacto. Pero más allá del código, me apasiona comunicar y vender ideas, conectando tecnología y personas a través de mensajes claros, visuales y estratégicos.
               </p>
               <button className="mt-4 bg-transparent border border-white text-white px-6 py-2 rounded-full hover:bg-white/10 transition-all duration-300 text-sm">
                 Abierto a nuevas oportunidades
@@ -480,7 +479,7 @@ function App() {
           {/* Otros Certificados */}
           <div>
             <h3 className="text-3xl font-bold text-white mb-8 text-center">Otros Certificados</h3>
-            <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto transition-all duration-500 ${showMore ? 'opacity-100' : 'opacity-40 max-h-[300px] overflow-hidden'}`}>
+            <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto transition-all duration-700 ease-in-out ${showMore ? 'opacity-100 max-h-[2000px]' : 'opacity-40 max-h-[300px] overflow-hidden'}`}>
               {/* Monitor de Judo */}
               <div className="relative group">
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
@@ -611,18 +610,18 @@ function App() {
                 </div>
               </div>
 
-              {/* Hot USA Finalist */}
+              {/* Hotusa Finalist */}
               <div className="relative group">
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
                   <img 
                     src="/portfolio/images/certificates/hotusafinalist.jpg" 
-                    alt="Hot USA Finalist Certificate"
+                    alt="Hotusa Finalist Certificate"
                     className="w-full h-full object-contain bg-[#1a1a2e]"
                   />
                   <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
                     <p className="text-gray-400 text-sm">2024</p>
-                    <h3 className="text-xl font-bold text-white mb-1">Hot USA Finalist</h3>
-                    <p className="text-gray-300 text-sm mb-4">Finalista en el programa de emprendimiento Hot USA.</p>
+                    <h3 className="text-xl font-bold text-white mb-1">Hotusa Finalist</h3>
+                    <p className="text-gray-300 text-sm mb-4">Finalista en el programa de emprendimiento Hotusa.</p>
                     <button 
                       onClick={() => window.open('/portfolio/images/certificates/hotusafinalist.jpg', '_blank')}
                       className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full transition-all duration-300 flex items-center gap-2 text-sm w-fit mx-auto"
