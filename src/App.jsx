@@ -110,7 +110,7 @@ function App() {
               </p>
               <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pt-4">
                 <a 
-                  href="https://drive.google.com/file/d/1aIEM-ixpNCKAr-p7YwiHRRGj21u16HbR/view"
+                  href="/portfolio/curriculum.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto group relative inline-flex items-center justify-center px-8 py-3 rounded-lg font-medium text-base lg:text-lg overflow-hidden"
