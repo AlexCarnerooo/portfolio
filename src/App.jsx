@@ -417,7 +417,7 @@ function App() {
       {/* 4. Certificaciones Section */}
       <section id="logros" className="py-20 bg-gradient-to-b from-[#1e1e3f] to-[#1a1a35]">
         <div className="container mx-auto px-4">
-          <h2 className="text-6xl font-bold text-center text-white mb-12">Certificaciones</h2>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-center text-white mb-8 sm:mb-12 leading-tight">Certificaciones</h2>
 
           {/* Certificaciones Técnicas */}
           <div className="mb-16">
