@@ -73,14 +73,15 @@ function App() {
 
   // Lista de logos a mostrar
   const skillLogos = [
-    { src: '/portfolio/images/logos/vite.svg', alt: 'Vite' },
-    { src: '/portfolio/images/logos/canva.svg', alt: 'Canva' },
+    { src: '/portfolio/images/logos/LangGraph.svg', alt: 'LangGraph' },
+    { src: '/portfolio/images/logos/FastAPI.svg', alt: 'FastAPI' },
     { src: '/portfolio/images/logos/html.svg', alt: 'HTML' },
     { src: '/portfolio/images/logos/css.svg', alt: 'CSS' },
     { src: '/portfolio/images/logos/access.svg', alt: 'Access' },
-    { src: '/portfolio/images/logos/wordpress.svg', alt: 'WordPress' },
     { src: '/portfolio/images/logos/odoo.svg', alt: 'Odoo' },
-    { src: '/portfolio/images/logos/excel.svg', alt: 'Excel' },
+    { src: '/portfolio/images/logos/NumPy.svg', alt: 'NumPy' },
+    { src: '/portfolio/images/logos/Pandas.svg', alt: 'Pandas' },
+    { src: '/portfolio/images/logos/TensorFlow.svg', alt: 'TensorFlow' },
     { src: '/portfolio/images/logos/javascript.svg', alt: 'JavaScript' },
   ];
   const infiniteLogos = [...skillLogos, ...skillLogos];
@@ -420,7 +421,7 @@ function App() {
 
           {/* Certificaciones Técnicas */}
           <div className="mb-16">
-            <h3 className="text-3xl font-bold text-white mb-8 text-center">Certificaciones Técnicas</h3>
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-8 text-center px-4">Certificaciones Técnicas</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
               {/* Santander Explorer */}
               <div className="relative group">
