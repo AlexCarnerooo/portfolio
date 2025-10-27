@@ -366,7 +366,7 @@ function App() {
                 </div>
                 <div className="flex gap-3 pt-2">
                   <a 
-                    href="https://github.com/AlexCarnerooo/Song-Recommender" 
+                    href="https://github.com/AlexCarnerooo/songrecomender" 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-4 py-1.5 border border-white text-white rounded-lg text-sm font-medium hover:bg-white/10 transition-all"
