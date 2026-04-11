@@ -1,14 +1,12 @@
 import { useState, useEffect, useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import { saveAs } from 'file-saver'
-import profileImage from './assets/profile.jpg'
-import logo from './assets/logo.png'
 import ContactForm from './ContactForm'
 
 // Inicializar EmailJS con tu clave pública
 emailjs.init("slXG_icFbWsZU8f2r");
 
-const heroImage = '/portfolio/images/presentandoAtlic.jpg';
+const publicImage = (file) => `${import.meta.env.BASE_URL}images/${file}`;
 
 function App() {
   const form = useRef();
@@ -105,9 +103,14 @@ function App() {
               <h3 className="text-2xl sm:text-3xl md:text-4xl text-white/90 font-medium">
                 Fullstack AI Developer
               </h3>
-              <p className="text-gray-300 text-base sm:text-lg md:text-xl max-w-lg">
-                Trabajo en el desarrollo de soluciones inteligentes que integran automatización, análisis de datos y arquitectura full-stack. Actualmente formo parte de Novatech, donde diseño sistemas de inteligencia artificial personalizados para empresas que buscan decisiones más eficientes y procesos más conectados.
-              </p>
+              <div className="text-gray-300 text-base sm:text-lg md:text-xl max-w-lg space-y-4">
+                <p>
+                  Trabajo en el desarrollo de soluciones basadas en inteligencia artificial, combinando automatización, análisis de datos y arquitectura full-stack. Me enfoco en crear sistemas inteligentes capaces de resolver problemas reales, desde modelos de machine learning hasta agentes autónomos y flujos de trabajo.
+                </p>
+                <p>
+                  Además, sigo formándome de manera continua y desarrollando proyectos propios, explorando nuevas tecnologías y construyendo soluciones que aplican la inteligencia artificial a casos reales de negocio.
+                </p>
+              </div>
               <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pt-4">
                 <a 
                   href="/portfolio/curriculum.pdf"
@@ -127,7 +130,7 @@ function App() {
                      className="text-white/70 hover:text-white transition-colors transform hover:scale-110 duration-200">
                     <svg className="w-6 h-6 md:w-7 md:h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.237 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                   </a>
-                  <a href="https://instagram.com/alexcarneroo" target="_blank" rel="noopener noreferrer" 
+                  <a href="https://www.instagram.com/alexcarnero.ia/" target="_blank" rel="noopener noreferrer" 
                      className="text-white/70 hover:text-white transition-colors transform hover:scale-110 duration-200">
                     <svg className="w-6 h-6 md:w-7 md:h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                   </a>
@@ -140,11 +143,14 @@ function App() {
               <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[400px] md:h-[400px] transform hover:scale-105 transition-all duration-500">
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent rounded-full"></div>
                 <div className="w-full h-full rounded-full border border-white/10 overflow-hidden shadow-2xl">
-                  <img
-                    src={heroImage}
-                    alt="Alexandre Carnero Hero"
-                    className="w-full h-full object-cover object-center"
-                  />
+                  <picture className="block w-full h-full">
+                    <source srcSet={publicImage('hotusa_image.webp')} type="image/webp" />
+                    <img
+                      src={publicImage('hotusa_image.jpg')}
+                      alt="Alexandre Carnero Hero"
+                      className="w-full h-full object-cover object-[center_43%]"
+                    />
+                  </picture>
                 </div>
                 {/* Iconos tecnologías - ajustados para responsive */}
                 <div className="absolute top-1/4 -left-4 sm:-left-6 w-12 h-12 sm:w-16 sm:h-16 animate-float">
@@ -247,20 +253,19 @@ function App() {
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* ID Card estilo carnet profesional */}
             <div className="flex flex-col items-center">
-              {/* Lanyard SVG */}
-              <svg width="120" height="80" viewBox="0 0 120 80" className="-mb-8 -mt-4 z-10" style={{filter:'drop-shadow(0 4px 8px rgba(0,0,0,0.3))'}}>
-                <g>
-                  <rect x="52" y="0" width="16" height="32" rx="8" fill="#b0b0b0"/>
-                  <rect x="56" y="28" width="8" height="16" rx="4" fill="#888"/>
-                  <rect x="58" y="40" width="4" height="16" rx="2" fill="#444"/>
-                  <path d="M60 56 Q60 70 20 78" stroke="#b0b0b0" strokeWidth="6" fill="none"/>
-                  <path d="M60 56 Q60 70 100 78" stroke="#b0b0b0" strokeWidth="6" fill="none"/>
-                </g>
-              </svg>
-              <div className="relative w-[270px] h-[370px] rotate-[-15deg] shadow-2xl rounded-xl bg-gradient-to-br from-black via-[#23232e] to-[#23232e] overflow-hidden border border-white/10">
+              <div className="w-[270px] relative">
+              <div className="relative z-0 w-full h-[370px] rotate-[-15deg] shadow-2xl rounded-xl bg-gradient-to-br from-black via-[#23232e] to-[#23232e] overflow-hidden border border-white/10">
                 {/* Foto más grande, sin franja celeste */}
-                <div className="w-full h-[180px] bg-white flex items-center justify-center z-20 relative p-0">
-                  <img src={profileImage} alt="Alex Carnero" className="w-full h-full object-cover object-center rounded-none shadow-lg border-0" />
+                <div className="w-full h-[180px] bg-white flex items-center justify-center relative p-0">
+                  <picture className="block w-full h-full">
+                    <source srcSet={publicImage('mobile_presentandoAtlic.webp')} type="image/webp" media="(max-width: 600px)" />
+                    <source srcSet={publicImage('presentandoAtlic.webp')} type="image/webp" />
+                    <img
+                      src={publicImage('presentandoAtlic.jpg')}
+                      alt="Alex Carnero"
+                      className="w-full h-full object-cover object-center rounded-none shadow-lg border-0"
+                    />
+                  </picture>
                 </div>
                 {/* Nombre y rol */}
                 <div className="absolute bottom-24 left-0 w-full px-6">
@@ -273,17 +278,29 @@ function App() {
                   <span className="text-xs text-white/80 tracking-wide">alexandrecarnerop@gmail.com</span>
                 </div>
               </div>
+              <div className="absolute -top-[4rem] right-6 z-30 flex justify-end pointer-events-none" aria-hidden="true">
+                <svg width="120" height="80" viewBox="0 0 120 80" className="shrink-0" style={{ filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))' }}>
+                  <g>
+                    <rect x="52" y="0" width="16" height="32" rx="8" fill="#b0b0b0"/>
+                    <rect x="56" y="28" width="8" height="16" rx="4" fill="#888"/>
+                    <rect x="58" y="40" width="4" height="16" rx="2" fill="#444"/>
+                    <path d="M60 56 Q60 70 20 78" stroke="#b0b0b0" strokeWidth="6" fill="none"/>
+                    <path d="M60 56 Q60 70 100 78" stroke="#b0b0b0" strokeWidth="6" fill="none"/>
+                  </g>
+                </svg>
+              </div>
+              </div>
             </div>
             {/* Description */}
             <div className="space-y-4 text-base text-gray-300">
               <p className="leading-relaxed">
-                Soy estudiante de último curso en el grado de Empresa y Tecnología, con un perfil centrado en inteligencia artificial, programación y análisis de datos. Combino el enfoque técnico con una visión de negocio para construir soluciones que realmente aportan valor.
+                Soy estudiante de último curso en el grado de Empresa y Tecnología, con un fuerte interés en la inteligencia artificial aplicada a problemas reales. Cuento con experiencia como AI Engineer, habiendo trabajado en entornos profesionales desarrollando soluciones basadas en inteligencia artificial, y actualmente continúo desarrollando este perfil a través de prácticas y proyectos aplicados.
               </p>
               <p className="leading-relaxed">
-                Mi vida siempre ha estado marcada por el equilibrio entre tecnología y deporte. Como instructor de judo, he desarrollado una forma de trabajar basada en la disciplina, la perseverancia y el trabajo en equipo. Hoy complemento esa energía con surf y yoga, buscando mantener la mente enfocada y activa.
+                Tengo un perfil inquieto y emprendedor. He participado en hackathons, voluntariados internacionales y proyectos multidisciplinares en distintos países, lo que me ha permitido desarrollar una mentalidad abierta, adaptativa y orientada al aprendizaje continuo. Me motiva salir de mi zona de confort, aprender de otros entornos y construir soluciones en contextos reales.
               </p>
               <p className="leading-relaxed">
-                Tengo una actitud inquieta y emprendedora. He participado en hackathons, voluntariados internacionales y proyectos multidisciplinares, siempre con la motivación de aprender algo nuevo y generar impacto. Pero más allá del código, me apasiona comunicar y vender ideas, conectando tecnología y personas a través de mensajes claros, visuales y estratégicos.
+                A lo largo de mi trayectoria he compaginado mis estudios con diferentes experiencias profesionales en distintos sectores. Entre ellas, he trabajado durante varios años como profesor de judo, además de otros trabajos, lo que me ha permitido desarrollar disciplina, constancia y capacidad de trabajo en equipo, valores que aplico directamente en mi forma de afrontar retos.
               </p>
               <button className="mt-4 bg-transparent border border-white text-white px-6 py-2 rounded-full hover:bg-white/10 transition-all duration-300 text-sm">
                 Abierto a nuevas oportunidades
