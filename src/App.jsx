@@ -3,6 +3,8 @@ import emailjs from '@emailjs/browser'
 import { saveAs } from 'file-saver'
 import ContactForm from './ContactForm'
 import AskMyCV from './components/AskMyCV'
+import IdCard from './components/IdCard'
+import Experience from './components/Experience'
 
 // Inicializar EmailJS con tu clave pública
 emailjs.init("slXG_icFbWsZU8f2r");
@@ -112,7 +114,7 @@ function App() {
                   Diseño y construyo sistemas basados en IA: aplicaciones con LLMs, agentes multi-agente con LangChain y LangGraph, RAG y automatizaciones que resuelven problemas reales de negocio.
                 </p>
                 <p>
-                  Actualmente trabajo en Indra en el área de ciberseguridad de Inditex, analizando los datos de seguridad de toda la compañía con Python y Snowflake para evaluar su postura de ciberseguridad y ofrecer una visión global y clara de su estado actual.
+                  Actualmente trabajo en Indra en el área de ciberseguridad de Inditex, analizando los datos de seguridad de toda la compañía con Python y Snowflake para evaluar su postura de ciberseguridad. Lo compagino con mi propio negocio: soluciones de IA y automatización para empresas.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pt-4">
@@ -231,6 +233,7 @@ function App() {
               {/* Desktop menu */}
               <div className="hidden lg:flex items-center gap-10">
                 <a href="#sobre-mi" className="text-white hover:text-white/70 transition-colors font-medium">Sobre mí</a>
+                <a href="#experiencia" className="text-white hover:text-white/70 transition-colors font-medium">Experiencia</a>
                 <a href="#proyectos" className="text-white hover:text-white/70 transition-colors font-medium">Proyectos</a>
                 <a href="#logros" className="text-white hover:text-white/70 transition-colors font-medium">Logros</a>
                 <a href="#contacto" className="text-white hover:text-white/70 transition-colors font-medium">Contacto</a>
@@ -241,6 +244,7 @@ function App() {
             <div className={`lg:hidden ${mobileMenuOpen ? 'block' : 'hidden'}`}>
               <div className="py-4 space-y-4">
                 <a href="#sobre-mi" onClick={() => setMobileMenuOpen(false)} className="block text-white hover:text-white/70 transition-colors font-medium">Sobre mí</a>
+                <a href="#experiencia" onClick={() => setMobileMenuOpen(false)} className="block text-white hover:text-white/70 transition-colors font-medium">Experiencia</a>
                 <a href="#proyectos" onClick={() => setMobileMenuOpen(false)} className="block text-white hover:text-white/70 transition-colors font-medium">Proyectos</a>
                 <a href="#logros" onClick={() => setMobileMenuOpen(false)} className="block text-white hover:text-white/70 transition-colors font-medium">Logros</a>
                 <a href="#contacto" onClick={() => setMobileMenuOpen(false)} className="block text-white hover:text-white/70 transition-colors font-medium">Contacto</a>
@@ -255,60 +259,28 @@ function App() {
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-white mb-12">¿Quién Soy?</h2>
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            {/* ID Card estilo carnet profesional */}
-            <div className="flex flex-col items-center pt-20 pb-8">
-              <div className="w-[270px] relative">
-              <div className="relative z-0 w-full h-[370px] rotate-[-15deg] shadow-2xl rounded-xl bg-gradient-to-br from-black via-[#23232e] to-[#23232e] overflow-hidden border border-white/10">
-                {/* Foto más grande, sin franja celeste */}
-                <div className="w-full h-[180px] bg-white flex items-center justify-center relative p-0">
-                  <picture className="block w-full h-full">
-                    <source srcSet={publicImage('mobile_presentandoAtlic.webp')} type="image/webp" media="(max-width: 600px)" />
-                    <source srcSet={publicImage('presentandoAtlic.webp')} type="image/webp" />
-                    <img
-                      src={publicImage('presentandoAtlic.jpg')}
-                      alt="Alex Carnero"
-                      className="w-full h-full object-cover object-center rounded-none shadow-lg border-0"
-                    />
-                  </picture>
-                </div>
-                {/* Nombre y rol */}
-                <div className="absolute bottom-24 left-0 w-full px-6">
-                  <h3 className="text-2xl font-bold text-white leading-tight whitespace-normal break-words">Alexandre Carnero</h3>
-                  <p className="text-base font-semibold whitespace-normal break-words text-[#2dd4bf]">AI Engineer · Cybersecurity @ Indra</p>
-                </div>
-                {/* Línea y web/correo */}
-                <div className="absolute bottom-8 left-0 w-full flex flex-col items-center">
-                  <div className="w-48 h-[2px] bg-[#2dd4bf] mb-2 opacity-80"></div>
-                  <span className="text-xs text-white/80 tracking-wide">alexandrecarnerop@gmail.com</span>
-                </div>
-              </div>
-              <div className="absolute -top-[4rem] right-6 z-30 flex justify-end pointer-events-none" aria-hidden="true">
-                <svg width="120" height="80" viewBox="0 0 120 80" className="shrink-0" style={{ filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))' }}>
-                  <g>
-                    <rect x="52" y="0" width="16" height="32" rx="8" fill="#b0b0b0"/>
-                    <rect x="56" y="28" width="8" height="16" rx="4" fill="#888"/>
-                    <rect x="58" y="40" width="4" height="16" rx="2" fill="#444"/>
-                    <path d="M60 56 Q60 70 20 78" stroke="#b0b0b0" strokeWidth="6" fill="none"/>
-                    <path d="M60 56 Q60 70 100 78" stroke="#b0b0b0" strokeWidth="6" fill="none"/>
-                  </g>
-                </svg>
-              </div>
-              </div>
-            </div>
-            {/* Description */}
-            <div className="space-y-4 text-base text-gray-300">
-              <p className="leading-relaxed">
-                Soy graduado en Empresa y Tecnología por la Universidad de Santiago de Compostela, con Matrícula de Honor en Machine Learning, y completé un Erasmus en la IMC University of Applied Sciences de Krems (Austria). He trabajado como AI Agent Engineer construyendo aplicaciones con LLMs y sistemas multi-agente, y actualmente formo parte de Indra en el equipo de ciberseguridad de Inditex.
+            <IdCard />
+            {/* Descripción */}
+            <div className="space-y-6 text-base text-gray-300">
+              <p className="text-2xl sm:text-3xl font-bold text-white leading-snug">
+                Construyo sistemas de IA para resolver <span className="text-[#2dd4bf]">problemas reales</span>, desde agentes con LLMs hasta soluciones basadas en datos.
               </p>
               <p className="leading-relaxed">
-                Tengo un perfil inquieto y emprendedor. He participado en hackathons, voluntariados internacionales y proyectos multidisciplinares en distintos países, lo que me ha permitido desarrollar una mentalidad abierta, adaptativa y orientada al aprendizaje continuo. Me motiva salir de mi zona de confort, aprender de otros entornos y construir soluciones en contextos reales.
+                Graduado en Empresa y Tecnología por la Universidad de Santiago de Compostela, con <span className="text-[#2dd4bf] font-semibold">Matrícula de Honor en Machine Learning</span>. Durante los últimos años he compaginado la carrera con trabajo real en IA: agentes con LLMs en startups y, con mi propio negocio, soluciones de automatización para inmobiliarias, inversores y asesorías, incluido un sistema de captación de leads que vendí a clientes B2B. Hoy estoy en Indra, en el proyecto de ciberseguridad de Inditex, y sigo profundizando en IA, software y datos.
               </p>
               <p className="leading-relaxed">
-                A lo largo de mi trayectoria he compaginado mis estudios con diferentes experiencias profesionales en distintos sectores. Entre ellas, he trabajado durante varios años como profesor de judo, además de otros trabajos, lo que me ha permitido desarrollar disciplina, constancia y capacidad de trabajo en equipo, valores que aplico directamente en mi forma de afrontar retos.
+                Fuera del trabajo, siempre he buscado construir y probar cosas: proyectos propios, emprendimiento, hackathons y experiencias internacionales. También fui profesor de judo durante seis años, una etapa que marcó bastante mi forma de trabajar: disciplina, constancia y trabajo en equipo.
               </p>
-              <button className="mt-4 bg-transparent border border-white text-white px-6 py-2 rounded-full hover:bg-white/10 transition-all duration-300 text-sm">
+              <a
+                href="#contacto"
+                className="inline-flex items-center gap-2 bg-transparent border border-white text-white px-6 py-2 rounded-full hover:bg-white/10 transition-all duration-300 text-sm"
+              >
+                <span className="relative flex w-2 h-2">
+                  <span className="absolute inline-flex w-full h-full rounded-full bg-emerald-400 opacity-75 animate-ping"></span>
+                  <span className="relative inline-flex w-2 h-2 rounded-full bg-emerald-400"></span>
+                </span>
                 Abierto a nuevas oportunidades
-              </button>
+              </a>
             </div>
           </div>
           <div className="max-w-6xl mx-auto mt-16">
@@ -316,6 +288,9 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* Experiencia */}
+      <Experience />
 
       {/* 3. Projects Section */}
       <section id="proyectos" className="py-20 bg-gradient-to-b from-[#1e1e3f] to-[#1a1a35]">
@@ -686,7 +661,10 @@ function App() {
       {/* 5. Contact Form Section */}
       <section id="contacto" className="py-20 bg-gradient-to-b from-[#1e1e3f] to-[#1a1a35]">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-white mb-12">Contacto</h2>
+          <h2 className="text-4xl font-bold text-center text-white mb-4">Contacto</h2>
+          <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+            Si buscas un AI Engineer para tu equipo, o tienes un proceso que te gustaría automatizar con IA, escríbeme.
+          </p>
           <div className="max-w-lg mx-auto">
             <ContactForm />
           </div>
