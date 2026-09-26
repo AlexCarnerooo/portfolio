@@ -101,14 +101,17 @@ function App() {
                 Carnero
               </h1>
               <h3 className="text-2xl sm:text-3xl md:text-4xl text-white/90 font-medium">
-                Fullstack AI Developer
+                AI Engineer
               </h3>
+              <p className="text-white/60 text-base sm:text-lg font-medium tracking-wide">
+                Cybersecurity & AI Analyst @ Indra
+              </p>
               <div className="text-gray-300 text-base sm:text-lg md:text-xl max-w-lg space-y-4">
                 <p>
-                  Trabajo en el desarrollo de soluciones basadas en inteligencia artificial, combinando automatización, análisis de datos y arquitectura full-stack. Me enfoco en crear sistemas inteligentes capaces de resolver problemas reales, desde modelos de machine learning hasta agentes autónomos y flujos de trabajo.
+                  Diseño y construyo sistemas basados en IA: aplicaciones con LLMs, agentes multi-agente con LangChain y LangGraph, RAG y automatizaciones que resuelven problemas reales de negocio.
                 </p>
                 <p>
-                  Además, sigo formándome de manera continua y desarrollando proyectos propios, explorando nuevas tecnologías y construyendo soluciones que aplican la inteligencia artificial a casos reales de negocio.
+                  Actualmente trabajo en Indra en el área de ciberseguridad de Inditex, analizando los datos de seguridad de toda la compañía con Python y Snowflake para evaluar su postura de ciberseguridad y ofrecer una visión global y clara de su estado actual.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pt-4">
@@ -249,10 +252,10 @@ function App() {
       {/* 2. ¿Quién Soy? Section */}
       <section id="sobre-mi" className="py-12 bg-gradient-to-b from-[#1a1a35] to-[#1e1e3f]">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-white mb-12">¿Quien Soy?</h2>
+          <h2 className="text-4xl font-bold text-center text-white mb-12">¿Quién Soy?</h2>
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* ID Card estilo carnet profesional */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center pt-20 pb-8">
               <div className="w-[270px] relative">
               <div className="relative z-0 w-full h-[370px] rotate-[-15deg] shadow-2xl rounded-xl bg-gradient-to-br from-black via-[#23232e] to-[#23232e] overflow-hidden border border-white/10">
                 {/* Foto más grande, sin franja celeste */}
@@ -270,7 +273,7 @@ function App() {
                 {/* Nombre y rol */}
                 <div className="absolute bottom-24 left-0 w-full px-6">
                   <h3 className="text-2xl font-bold text-white leading-tight whitespace-normal break-words">Alexandre Carnero</h3>
-                  <p className="text-base font-semibold whitespace-normal break-words text-[#2dd4bf]">Estudiante de Empresa y Tecnología</p>
+                  <p className="text-base font-semibold whitespace-normal break-words text-[#2dd4bf]">AI Engineer · Cybersecurity @ Indra</p>
                 </div>
                 {/* Línea y web/correo */}
                 <div className="absolute bottom-8 left-0 w-full flex flex-col items-center">
@@ -294,7 +297,7 @@ function App() {
             {/* Description */}
             <div className="space-y-4 text-base text-gray-300">
               <p className="leading-relaxed">
-                Soy estudiante de último curso en el grado de Empresa y Tecnología, con un fuerte interés en la inteligencia artificial aplicada a problemas reales. Cuento con experiencia como AI Engineer, habiendo trabajado en entornos profesionales desarrollando soluciones basadas en inteligencia artificial, y actualmente continúo desarrollando este perfil a través de prácticas y proyectos aplicados.
+                Soy graduado en Empresa y Tecnología por la Universidad de Santiago de Compostela, con Matrícula de Honor en Machine Learning, y completé un Erasmus en la IMC University of Applied Sciences de Krems (Austria). He trabajado como AI Agent Engineer construyendo aplicaciones con LLMs y sistemas multi-agente, y actualmente formo parte de Indra en el equipo de ciberseguridad de Inditex.
               </p>
               <p className="leading-relaxed">
                 Tengo un perfil inquieto y emprendedor. He participado en hackathons, voluntariados internacionales y proyectos multidisciplinares en distintos países, lo que me ha permitido desarrollar una mentalidad abierta, adaptativa y orientada al aprendizaje continuo. Me motiva salir de mi zona de confort, aprender de otros entornos y construir soluciones en contextos reales.
