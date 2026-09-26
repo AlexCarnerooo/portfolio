@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { useLang } from '../i18n/LanguageContext'
 
 const publicImage = (file) => `${import.meta.env.BASE_URL}images/${file}`
 
@@ -14,6 +15,7 @@ const prefersReducedMotion = () =>
   typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
 export default function IdCard() {
+  const { t } = useLang()
   const wrapper = useRef(null)
   const swing = useRef(null)
   const [flipped, setFlipped] = useState(false)
@@ -60,9 +62,11 @@ export default function IdCard() {
 
   // Ángulo del puntero respecto a la vertical que pasa por la pinza
   const pointerAngle = (e) => {
+    // El contenedor puede estar escalado (móvil): se lleva el pivote a la escala real
     const rect = wrapper.current.getBoundingClientRect()
-    const dx = e.clientX - (rect.left + PIVOT_X)
-    const dy = e.clientY - (rect.top + PIVOT_Y)
+    const scale = rect.width / 270
+    const dx = e.clientX - (rect.left + PIVOT_X * scale)
+    const dy = e.clientY - (rect.top + PIVOT_Y * scale)
     return (Math.atan2(dx, dy) * 180) / Math.PI
   }
 
@@ -124,7 +128,12 @@ export default function IdCard() {
 
   return (
     <div className="flex flex-col items-center pt-20 pb-8 select-none">
-      <div ref={wrapper} className="w-[270px] h-[370px] relative">
+      {/* Al girar desde la pinza, el dibujo queda desplazado ~66px a la derecha y ocupa ~357px:
+          se recentra con translate y en móvil se reduce para que quepa en pantallas de 320px */}
+      <div
+        ref={wrapper}
+        className="w-[270px] h-[370px] relative origin-top -translate-x-[53px] scale-[0.8] -mb-[74px] sm:-translate-x-[66px] sm:scale-100 sm:mb-0"
+      >
         <div
           ref={swing}
           className="w-full h-full"
@@ -134,7 +143,7 @@ export default function IdCard() {
             role="button"
             tabIndex={0}
             aria-pressed={flipped}
-            aria-label={flipped ? 'Ver la parte delantera de la tarjeta' : 'Ver la parte trasera de la tarjeta'}
+            aria-label={flipped ? t.card.showFront : t.card.showBack}
             onPointerDown={onPointerDown}
             onPointerMove={onPointerMove}
             onPointerUp={onPointerUp}
@@ -173,35 +182,35 @@ export default function IdCard() {
             </div>
 
             {/* Cara trasera */}
-            <div className={`${face} [transform:rotateY(180deg)] p-6 flex flex-col`}>
+            <div className={`${face} [transform:rotateY(180deg)] px-5 py-5 flex flex-col`}>
               <p className="text-xs uppercase tracking-[0.2em] text-[#2dd4bf]">Access pass</p>
-              <h3 className="text-xl font-bold text-white mt-1">Alexandre Carnero</h3>
-              <div className="w-full h-[2px] bg-[#2dd4bf] opacity-80 my-3"></div>
+              <h3 className="text-lg font-bold text-white leading-tight mt-1">Alexandre Carnero</h3>
+              <div className="w-full h-[2px] bg-[#2dd4bf] opacity-80 my-2.5"></div>
 
-              <p className="text-[11px] uppercase tracking-wider text-gray-500">Ahora</p>
-              <p className="text-sm text-white mb-3">Cybersecurity & AI Analyst @ Indra</p>
+              <p className="text-[11px] uppercase tracking-wider text-gray-500">{t.card.now}</p>
+              <p className="text-[13px] leading-snug text-white mb-2">Cybersecurity & AI Analyst @ Indra</p>
 
-              <p className="text-[11px] uppercase tracking-wider text-gray-500">Base</p>
-              <p className="text-sm text-white mb-3">Ferrol, Galicia</p>
+              <p className="text-[11px] uppercase tracking-wider text-gray-500">{t.card.base}</p>
+              <p className="text-[13px] leading-snug text-white mb-2">Ferrol, Galicia</p>
 
-              <p className="text-[11px] uppercase tracking-wider text-gray-500">Idiomas</p>
-              <p className="text-sm text-white mb-3">Español y gallego (nativo) · Inglés B2</p>
+              <p className="text-[11px] uppercase tracking-wider text-gray-500">{t.card.languages}</p>
+              <p className="text-[13px] leading-snug text-white mb-2">{t.card.languagesValue}</p>
 
-              <p className="text-[11px] uppercase tracking-wider text-gray-500 mb-1.5">Stack</p>
+              <p className="text-[11px] uppercase tracking-wider text-gray-500 mb-1">Stack</p>
               <div className="flex flex-wrap gap-1.5">
-                {stack.map((t) => (
-                  <span key={t} className="px-2 py-0.5 text-[11px] bg-[#2a2a4a] rounded-full text-white">{t}</span>
+                {stack.map((tech) => (
+                  <span key={tech} className="px-2 py-0.5 text-[11px] bg-[#2a2a4a] rounded-full text-white">{tech}</span>
                 ))}
               </div>
 
-              <div className="mt-auto flex items-center justify-between">
+              <div className="mt-auto pt-3 flex items-center justify-between">
                 <a
                   href={`${import.meta.env.BASE_URL}curriculum.pdf`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-3 py-1.5 border border-white text-white rounded-lg text-xs font-medium hover:bg-white/10 transition-all"
                 >
-                  Descargar CV
+                  {t.card.downloadCv}
                 </a>
                 <div className="flex gap-3">
                   <a href="https://linkedin.com/in/alexandre-carnero-1a1561283" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-white/70 hover:text-white transition-colors">
@@ -231,7 +240,7 @@ export default function IdCard() {
         <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
         </svg>
-        Arrástrala o haz clic para darle la vuelta
+        {t.card.hint}
       </p>
     </div>
   )

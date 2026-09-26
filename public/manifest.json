@@ -4,7 +4,7 @@
   "start_url": ".",
   "display": "standalone",
   "background_color": "#1e1e3f",
-  "description": "Portfolio de Alexandre Carnero",
+  "description": "Portfolio of Alexandre Carnero",
   "icons": [
     {
       "src": "favicon.jpg",

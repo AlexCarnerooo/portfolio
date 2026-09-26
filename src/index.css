@@ -359,7 +359,6 @@ body {
 }
 
 .animate-marquee {
-  display: flex;
   width: max-content;
   animation: marquee 25s linear infinite;
 }
@@ -370,7 +369,6 @@ body {
 }
 
 .animate-marquee-reverse {
-  display: flex;
   width: max-content;
   animation: marquee-reverse 28s linear infinite;
 } 

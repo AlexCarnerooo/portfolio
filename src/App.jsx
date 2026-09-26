@@ -5,6 +5,8 @@ import ContactForm from './ContactForm'
 import AskMyCV from './components/AskMyCV'
 import IdCard from './components/IdCard'
 import Experience from './components/Experience'
+import LanguageSwitcher from './components/LanguageSwitcher'
+import { useLang } from './i18n/LanguageContext'
 
 // Inicializar EmailJS con tu clave pública
 emailjs.init("slXG_icFbWsZU8f2r");
@@ -12,6 +14,7 @@ emailjs.init("slXG_icFbWsZU8f2r");
 const publicImage = (file) => `${import.meta.env.BASE_URL}images/${file}`;
 
 function App() {
+  const { t } = useLang();
   const form = useRef();
   const [scrolled, setScrolled] = useState(false);
   const [showMore, setShowMore] = useState(false);
@@ -97,7 +100,7 @@ function App() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-6xl mx-auto">
             {/* Text Content */}
             <div className="text-left space-y-4 md:space-y-6 fade-in-left order-2 lg:order-1">
-              <h2 className="text-white/70 text-lg md:text-xl lg:text-2xl font-medium tracking-wider">Hola, soy</h2>
+              <h2 className="text-white/70 text-lg md:text-xl lg:text-2xl font-medium tracking-wider">{t.hero.greeting}</h2>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
                 Alexandre
                 <br />
@@ -110,12 +113,8 @@ function App() {
                 Cybersecurity & AI Analyst @ Indra
               </p>
               <div className="text-gray-300 text-base sm:text-lg md:text-xl max-w-lg space-y-4">
-                <p>
-                  Diseño y construyo sistemas basados en IA: aplicaciones con LLMs, agentes multi-agente con LangChain y LangGraph, RAG y automatizaciones que resuelven problemas reales de negocio.
-                </p>
-                <p>
-                  Actualmente trabajo en Indra en el área de ciberseguridad de Inditex, analizando los datos de seguridad de toda la compañía con Python y Snowflake para evaluar su postura de ciberseguridad. Lo compagino con mi propio negocio: soluciones de IA y automatización para empresas.
-                </p>
+                <p>{t.hero.p1}</p>
+                <p>{t.hero.p2}</p>
               </div>
               <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pt-4">
                 <a 
@@ -125,7 +124,7 @@ function App() {
                   className="w-full sm:w-auto group relative inline-flex items-center justify-center px-8 py-3 rounded-lg font-medium text-base lg:text-lg overflow-hidden"
                 >
                   <div className="absolute inset-0 w-0 bg-white transition-all duration-[250ms] ease-out group-hover:w-full"></div>
-                  <span className="relative text-white group-hover:text-black">Ver CV</span>
+                  <span className="relative text-white group-hover:text-black">{t.hero.cv}</span>
                 </a>
                 <div className="flex gap-6">
                   <a href="https://linkedin.com/in/alexandre-carnero-1a1561283" target="_blank" rel="noopener noreferrer" 
@@ -215,9 +214,13 @@ function App() {
                 </div>
               </a>
               
-              {/* Mobile menu button */}
+              {/* Mobile: idioma + botón de menú */}
+              <div className="lg:hidden flex items-center gap-1 sm:gap-3">
+              <LanguageSwitcher />
               <button 
-                className="lg:hidden text-white hover:text-white/70 transition-colors p-2"
+                aria-label="Menu"
+                aria-expanded={mobileMenuOpen}
+                className="text-white hover:text-white/70 transition-colors p-2"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -229,25 +232,27 @@ function App() {
                   />
                 </svg>
               </button>
+              </div>
 
               {/* Desktop menu */}
               <div className="hidden lg:flex items-center gap-10">
-                <a href="#sobre-mi" className="text-white hover:text-white/70 transition-colors font-medium">Sobre mí</a>
-                <a href="#experiencia" className="text-white hover:text-white/70 transition-colors font-medium">Experiencia</a>
-                <a href="#proyectos" className="text-white hover:text-white/70 transition-colors font-medium">Proyectos</a>
-                <a href="#logros" className="text-white hover:text-white/70 transition-colors font-medium">Logros</a>
-                <a href="#contacto" className="text-white hover:text-white/70 transition-colors font-medium">Contacto</a>
+                <a href="#sobre-mi" className="text-white hover:text-white/70 transition-colors font-medium">{t.nav.about}</a>
+                <a href="#experiencia" className="text-white hover:text-white/70 transition-colors font-medium">{t.nav.experience}</a>
+                <a href="#proyectos" className="text-white hover:text-white/70 transition-colors font-medium">{t.nav.projects}</a>
+                <a href="#logros" className="text-white hover:text-white/70 transition-colors font-medium">{t.nav.achievements}</a>
+                <a href="#contacto" className="text-white hover:text-white/70 transition-colors font-medium">{t.nav.contact}</a>
+                <LanguageSwitcher className="border-l border-white/15 pl-6 -ml-4" />
               </div>
             </div>
 
             {/* Mobile menu panel */}
             <div className={`lg:hidden ${mobileMenuOpen ? 'block' : 'hidden'}`}>
               <div className="py-4 space-y-4">
-                <a href="#sobre-mi" onClick={() => setMobileMenuOpen(false)} className="block text-white hover:text-white/70 transition-colors font-medium">Sobre mí</a>
-                <a href="#experiencia" onClick={() => setMobileMenuOpen(false)} className="block text-white hover:text-white/70 transition-colors font-medium">Experiencia</a>
-                <a href="#proyectos" onClick={() => setMobileMenuOpen(false)} className="block text-white hover:text-white/70 transition-colors font-medium">Proyectos</a>
-                <a href="#logros" onClick={() => setMobileMenuOpen(false)} className="block text-white hover:text-white/70 transition-colors font-medium">Logros</a>
-                <a href="#contacto" onClick={() => setMobileMenuOpen(false)} className="block text-white hover:text-white/70 transition-colors font-medium">Contacto</a>
+                <a href="#sobre-mi" onClick={() => setMobileMenuOpen(false)} className="block text-white hover:text-white/70 transition-colors font-medium">{t.nav.about}</a>
+                <a href="#experiencia" onClick={() => setMobileMenuOpen(false)} className="block text-white hover:text-white/70 transition-colors font-medium">{t.nav.experience}</a>
+                <a href="#proyectos" onClick={() => setMobileMenuOpen(false)} className="block text-white hover:text-white/70 transition-colors font-medium">{t.nav.projects}</a>
+                <a href="#logros" onClick={() => setMobileMenuOpen(false)} className="block text-white hover:text-white/70 transition-colors font-medium">{t.nav.achievements}</a>
+                <a href="#contacto" onClick={() => setMobileMenuOpen(false)} className="block text-white hover:text-white/70 transition-colors font-medium">{t.nav.contact}</a>
               </div>
             </div>
           </div>
@@ -257,19 +262,19 @@ function App() {
       {/* 2. ¿Quién Soy? Section */}
       <section id="sobre-mi" className="py-12 bg-gradient-to-b from-[#1a1a35] to-[#1e1e3f]">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-white mb-12">¿Quién Soy?</h2>
+          <h2 className="text-4xl font-bold text-center text-white mb-12">{t.about.title}</h2>
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <IdCard />
             {/* Descripción */}
             <div className="space-y-6 text-base text-gray-300">
               <p className="text-2xl sm:text-3xl font-bold text-white leading-snug">
-                Construyo sistemas de IA para resolver <span className="text-[#2dd4bf]">problemas reales</span>, desde agentes con LLMs hasta soluciones basadas en datos.
+                {t.about.headline.pre}<span className="text-[#2dd4bf]">{t.about.headline.hl}</span>{t.about.headline.post}
               </p>
               <p className="leading-relaxed">
-                Graduado en Empresa y Tecnología por la Universidad de Santiago de Compostela, con <span className="text-[#2dd4bf] font-semibold">Matrícula de Honor en Machine Learning</span>. Durante los últimos años he compaginado la carrera con trabajo real en IA: agentes con LLMs en startups y, con mi propio negocio, soluciones de automatización para inmobiliarias, inversores y asesorías, incluido un sistema de captación de leads que vendí a clientes B2B. Hoy estoy en Indra, en el proyecto de ciberseguridad de Inditex, y sigo profundizando en IA, software y datos.
+                {t.about.p1.pre}<span className="text-[#2dd4bf] font-semibold">{t.about.p1.hl}</span>{t.about.p1.post}
               </p>
               <p className="leading-relaxed">
-                Fuera del trabajo, siempre he buscado construir y probar cosas: proyectos propios, emprendimiento, hackathons y experiencias internacionales. También fui profesor de judo durante seis años, una etapa que marcó bastante mi forma de trabajar: disciplina, constancia y trabajo en equipo.
+                {t.about.p2}
               </p>
               <a
                 href="#contacto"
@@ -279,7 +284,7 @@ function App() {
                   <span className="absolute inline-flex w-full h-full rounded-full bg-emerald-400 opacity-75 animate-ping"></span>
                   <span className="relative inline-flex w-2 h-2 rounded-full bg-emerald-400"></span>
                 </span>
-                Abierto a nuevas oportunidades
+                {t.about.open}
               </a>
             </div>
           </div>
@@ -295,9 +300,9 @@ function App() {
       {/* 3. Projects Section */}
       <section id="proyectos" className="py-20 bg-gradient-to-b from-[#1e1e3f] to-[#1a1a35]">
         <div className="container mx-auto px-4">
-          <h2 className="text-6xl font-bold text-center text-white mb-4">Proyectos</h2>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-center text-white mb-4">{t.projects.title}</h2>
           <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-            Una mezcla de análisis de datos, desarrollo web y proyectos de impacto social que reflejan mi pasión por la tecnología y los negocios.
+            {t.projects.subtitle}
           </p>
           
           <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -313,7 +318,7 @@ function App() {
               <div className="p-5 space-y-3">
                 <h3 className="text-xl font-bold text-white">José Carnero Yoga</h3>
                 <p className="text-gray-400 text-sm">
-                  Sitio web profesional para instructor de yoga, con información sobre clases, eventos y recursos de meditación.
+                  {t.projects.yoga}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className="px-2 py-1 text-xs bg-[#2a2a4a] rounded-full text-white">HTML</span>
@@ -328,7 +333,7 @@ function App() {
                     rel="noopener noreferrer"
                     className="px-4 py-1.5 bg-transparent border border-white text-white rounded-lg text-sm font-medium hover:bg-white/10 transition-all"
                   >
-                    Sitio Web
+                    {t.projects.website}
                   </a>
                   <a 
                     href="#" 
@@ -354,7 +359,7 @@ function App() {
               <div className="p-5 space-y-3">
                 <h3 className="text-xl font-bold text-white">Song Recommender</h3>
                 <p className="text-gray-400 text-sm">
-                  Sistema de recomendación de música que utiliza machine learning para analizar preferencias musicales y sugerir canciones personalizadas. Integra la API de Spotify para acceder a una amplia biblioteca de música y características de las canciones.
+                  {t.projects.song}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className="px-2 py-1 text-xs bg-[#2a2a4a] rounded-full text-white">Python</span>
@@ -382,29 +387,28 @@ function App() {
       {/* Skills Section */}
       <section className="py-20 bg-gradient-to-b from-[#1a1a35] to-[#1e1e3f] overflow-hidden">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-white mb-4">Habilidades</h2>
+          <h2 className="text-4xl font-bold text-center text-white mb-4">{t.skills.title}</h2>
           <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-            Tecnologías y herramientas que uso para crear soluciones innovadoras
+            {t.skills.subtitle}
           </p>
           <div className="relative max-w-5xl mx-auto">
             {/* Overlay gradients */}
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#1a1a35] to-transparent z-10"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#1a1a35] to-transparent z-10"></div>
+            <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-32 bg-gradient-to-r from-[#1a1a35] to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-32 bg-gradient-to-l from-[#1a1a35] to-transparent z-10"></div>
             {/* Marquee animado doble fila */}
             <div className="overflow-hidden w-full">
               <div className="flex flex-col gap-6">
                 {/* Fila 1 */}
-                <div className="flex gap-16 animate-marquee items-center py-4 
-                  sm:gap-16 sm:py-4 gap-8 py-2">
+                <div className="flex gap-8 sm:gap-16 animate-marquee items-center py-2 sm:py-4">
                   {infiniteLogos.map((logo, idx) => (
                     <img key={idx} src={logo.src} alt={logo.alt} 
-                      className="w-28 h-28 sm:w-28 sm:h-28 w-16 h-16 object-contain drop-shadow-lg" />
+                      className="w-16 h-16 sm:w-28 sm:h-28 shrink-0 object-contain drop-shadow-lg" />
                   ))}
                 </div>
                 {/* Fila 2 inversa, solo visible en sm+ */}
                 <div className="hidden sm:flex gap-16 animate-marquee-reverse items-center py-4">
                   {infiniteLogosReverse.map((logo, idx) => (
-                    <img key={idx} src={logo.src} alt={logo.alt} className="w-28 h-28 object-contain drop-shadow-lg" />
+                    <img key={idx} src={logo.src} alt={logo.alt} className="w-28 h-28 shrink-0 object-contain drop-shadow-lg" />
                   ))}
                 </div>
               </div>
@@ -416,11 +420,11 @@ function App() {
       {/* 4. Certificaciones Section */}
       <section id="logros" className="py-20 bg-gradient-to-b from-[#1e1e3f] to-[#1a1a35]">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-center text-white mb-8 sm:mb-12 leading-tight">Certificaciones</h2>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-center text-white mb-8 sm:mb-12 leading-tight">{t.certs.title}</h2>
 
           {/* Certificaciones Técnicas */}
           <div className="mb-16">
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-8 text-center px-4">Certificaciones Técnicas</h3>
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-8 text-center px-4">{t.certs.technical}</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
               {/* Santander Explorer */}
               <div className="relative group">
@@ -433,7 +437,7 @@ function App() {
                   <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
                     <p className="text-gray-400 text-sm">2023</p>
                     <h3 className="text-xl font-bold text-white mb-1">Santander Explorer</h3>
-                    <p className="text-gray-300 text-sm mb-4">Programa de emprendimiento e innovación del Banco Santander.</p>
+                    <p className="text-gray-300 text-sm mb-4">{t.certs.santander}</p>
                     <button 
                       onClick={() => window.open('/portfolio/images/certificates/santander_explorer.png', '_blank')}
                       className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full transition-all duration-300 flex items-center gap-2 text-sm w-fit mx-auto"
@@ -442,7 +446,7 @@ function App() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                       </svg>
-                      Ver Certificado
+                      {t.certs.view}
                     </button>
                   </div>
                 </div>
@@ -459,7 +463,7 @@ function App() {
                   <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
                     <p className="text-gray-400 text-sm">2023</p>
                     <h3 className="text-xl font-bold text-white mb-1">Green Olives Project</h3>
-                    <p className="text-gray-300 text-sm mb-4">Proyecto internacional de sostenibilidad y desarrollo empresarial.</p>
+                    <p className="text-gray-300 text-sm mb-4">{t.certs.greenOlives}</p>
                     <button 
                       onClick={() => window.open('/portfolio/images/certificates/green_olives.png', '_blank')}
                       className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full transition-all duration-300 flex items-center gap-2 text-sm w-fit mx-auto"
@@ -468,7 +472,7 @@ function App() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                       </svg>
-                      Ver Certificado
+                      {t.certs.view}
                     </button>
                   </div>
                 </div>
@@ -478,7 +482,7 @@ function App() {
 
           {/* Otros Certificados */}
           <div>
-            <h3 className="text-3xl font-bold text-white mb-8 text-center">Otros Certificados</h3>
+            <h3 className="text-3xl font-bold text-white mb-8 text-center">{t.certs.other}</h3>
             <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto transition-all duration-700 ease-in-out ${showMore ? 'opacity-100 max-h-[2000px]' : 'opacity-40 max-h-[250px] sm:max-h-[400px] lg:max-h-[450px] overflow-hidden'}`}>
               {/* Monitor de Judo */}
               <div className="relative group">
@@ -490,8 +494,8 @@ function App() {
                   />
                   <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
                     <p className="text-gray-400 text-sm">2023</p>
-                    <h3 className="text-xl font-bold text-white mb-1">Monitor de Judo</h3>
-                    <p className="text-gray-300 text-sm mb-4">Instructor certificado de judo, combinando disciplina deportiva con habilidades de liderazgo.</p>
+                    <h3 className="text-xl font-bold text-white mb-1">{t.certs.judoTitle}</h3>
+                    <p className="text-gray-300 text-sm mb-4">{t.certs.judo}</p>
                     <button 
                       onClick={() => window.open('/portfolio/images/certificates/monitor_judo.png', '_blank')}
                       className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full transition-all duration-300 flex items-center gap-2 text-sm w-fit mx-auto"
@@ -500,7 +504,7 @@ function App() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                       </svg>
-                      Ver Certificado
+                      {t.certs.view}
                     </button>
                   </div>
                 </div>
@@ -517,7 +521,7 @@ function App() {
                   <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
                     <p className="text-gray-400 text-sm">2023</p>
                     <h3 className="text-xl font-bold text-white mb-1">Contact Making Seminar</h3>
-                    <p className="text-gray-300 text-sm mb-4">Participación en seminario internacional para el desarrollo de habilidades de networking.</p>
+                    <p className="text-gray-300 text-sm mb-4">{t.certs.seminar}</p>
                     <button 
                       onClick={() => window.open('/portfolio/images/certificates/contact_making_seminar.png', '_blank')}
                       className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full transition-all duration-300 flex items-center gap-2 text-sm w-fit mx-auto"
@@ -526,7 +530,7 @@ function App() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                       </svg>
-                      Ver Certificado
+                      {t.certs.view}
                     </button>
                   </div>
                 </div>
@@ -543,7 +547,7 @@ function App() {
                   <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
                     <p className="text-gray-400 text-sm">2024</p>
                     <h3 className="text-xl font-bold text-white mb-1">USC Winner</h3>
-                    <p className="text-gray-300 text-sm mb-4">Reconocimiento por logros destacados en la Universidad de Santiago de Compostela.</p>
+                    <p className="text-gray-300 text-sm mb-4">{t.certs.usc}</p>
                     <button 
                       onClick={() => window.open('/portfolio/images/certificates/uscwinner.jpg', '_blank')}
                       className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full transition-all duration-300 flex items-center gap-2 text-sm w-fit mx-auto"
@@ -552,7 +556,7 @@ function App() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                       </svg>
-                      Ver Certificado
+                      {t.certs.view}
                     </button>
                   </div>
                 </div>
@@ -569,7 +573,7 @@ function App() {
                   <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
                     <p className="text-gray-400 text-sm">2024</p>
                     <h3 className="text-xl font-bold text-white mb-1">Hackathon Winner</h3>
-                    <p className="text-gray-300 text-sm mb-4">Ganador del hackathon de innovación y desarrollo tecnológico.</p>
+                    <p className="text-gray-300 text-sm mb-4">{t.certs.hackWinner}</p>
                     <button 
                       onClick={() => window.open('/portfolio/images/certificates/hackatonwinner.jpg', '_blank')}
                       className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full transition-all duration-300 flex items-center gap-2 text-sm w-fit mx-auto"
@@ -578,7 +582,7 @@ function App() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                       </svg>
-                      Ver Certificado
+                      {t.certs.view}
                     </button>
                   </div>
                 </div>
@@ -595,7 +599,7 @@ function App() {
                   <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
                     <p className="text-gray-400 text-sm">2024</p>
                     <h3 className="text-xl font-bold text-white mb-1">Hackathon Second Place</h3>
-                    <p className="text-gray-300 text-sm mb-4">Segundo puesto en hackathon de innovación tecnológica.</p>
+                    <p className="text-gray-300 text-sm mb-4">{t.certs.hackSecond}</p>
                     <button 
                       onClick={() => window.open('/portfolio/images/certificates/hackatonsecond.jpg', '_blank')}
                       className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full transition-all duration-300 flex items-center gap-2 text-sm w-fit mx-auto"
@@ -604,7 +608,7 @@ function App() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                       </svg>
-                      Ver Certificado
+                      {t.certs.view}
                     </button>
                   </div>
                 </div>
@@ -621,7 +625,7 @@ function App() {
                   <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
                     <p className="text-gray-400 text-sm">2024</p>
                     <h3 className="text-xl font-bold text-white mb-1">Hotusa Finalist</h3>
-                    <p className="text-gray-300 text-sm mb-4">Finalista en el programa de emprendimiento Hotusa.</p>
+                    <p className="text-gray-300 text-sm mb-4">{t.certs.hotusa}</p>
                     <button 
                       onClick={() => window.open('/portfolio/images/certificates/hotusafinalist.jpg', '_blank')}
                       className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-full transition-all duration-300 flex items-center gap-2 text-sm w-fit mx-auto"
@@ -630,7 +634,7 @@ function App() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                       </svg>
-                      Ver Certificado
+                      {t.certs.view}
                     </button>
                   </div>
                 </div>
@@ -643,7 +647,7 @@ function App() {
                 onClick={() => setShowMore(!showMore)}
                 className="inline-flex items-center gap-2 px-6 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition-all duration-300"
               >
-                <span>{showMore ? 'Ver Menos' : 'Ver Más'}</span>
+                <span>{showMore ? t.certs.less : t.certs.more}</span>
                 <svg
                   className={`w-4 h-4 transform transition-transform duration-300 ${showMore ? 'rotate-180' : ''}`}
                   fill="none"
@@ -661,9 +665,9 @@ function App() {
       {/* 5. Contact Form Section */}
       <section id="contacto" className="py-20 bg-gradient-to-b from-[#1e1e3f] to-[#1a1a35]">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-white mb-4">Contacto</h2>
+          <h2 className="text-4xl font-bold text-center text-white mb-4">{t.contact.title}</h2>
           <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-            Si buscas un AI Engineer para tu equipo, o tienes un proceso que te gustaría automatizar con IA, escríbeme.
+            {t.contact.subtitle}
           </p>
           <div className="max-w-lg mx-auto">
             <ContactForm />
