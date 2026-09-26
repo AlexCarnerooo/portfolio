@@ -8,6 +8,7 @@ export const ui = {
       p1: 'I design and build AI-powered systems: LLM applications, multi-agent systems with LangChain and LangGraph, RAG and automations that solve real business problems.',
       p2: "I currently work at Indra in Inditex's cybersecurity area, analysing security data across the whole company with Python and Snowflake to assess its cybersecurity posture. Alongside that, I run my own business: AI and automation solutions for companies.",
       cv: 'View CV',
+      nextPhoto: 'Show next photo',
     },
     about: {
       title: 'Who am I?',
@@ -87,6 +88,7 @@ export const ui = {
       p1: 'Diseño y construyo sistemas basados en IA: aplicaciones con LLMs, agentes multi-agente con LangChain y LangGraph, RAG y automatizaciones que resuelven problemas reales de negocio.',
       p2: 'Actualmente trabajo en Indra en el área de ciberseguridad de Inditex, analizando los datos de seguridad de toda la compañía con Python y Snowflake para evaluar su postura de ciberseguridad. Lo compagino con mi propio negocio: soluciones de IA y automatización para empresas.',
       cv: 'Ver CV',
+      nextPhoto: 'Ver siguiente foto',
     },
     about: {
       title: '¿Quién Soy?',
@@ -166,6 +168,7 @@ export const ui = {
       p1: 'Deseño e constrúo sistemas baseados en IA: aplicacións con LLMs, sistemas multiaxente con LangChain e LangGraph, RAG e automatizacións que resolven problemas reais de negocio.',
       p2: 'Actualmente traballo en Indra na área de ciberseguridade de Inditex, analizando os datos de seguridade de toda a compañía con Python e Snowflake para avaliar a súa postura de ciberseguridade. Compaxínoo co meu propio negocio: solucións de IA e automatización para empresas.',
       cv: 'Ver CV',
+      nextPhoto: 'Ver a seguinte foto',
     },
     about: {
       title: 'Quen son?',

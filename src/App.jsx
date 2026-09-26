@@ -6,12 +6,12 @@ import AskMyCV from './components/AskMyCV'
 import IdCard from './components/IdCard'
 import Experience from './components/Experience'
 import LanguageSwitcher from './components/LanguageSwitcher'
+import HeroPhotos from './components/HeroPhotos'
 import { useLang } from './i18n/LanguageContext'
 
 // Inicializar EmailJS con tu clave pública
 emailjs.init("slXG_icFbWsZU8f2r");
 
-const publicImage = (file) => `${import.meta.env.BASE_URL}images/${file}`;
 
 function App() {
   const { t } = useLang();
@@ -146,17 +146,7 @@ function App() {
             {/* Image (Hero) */}
             <div className="relative fade-in-right flex items-center justify-center order-1 lg:order-2">
               <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[400px] md:h-[400px] transform hover:scale-105 transition-all duration-500">
-                <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent rounded-full"></div>
-                <div className="w-full h-full rounded-full border border-white/10 overflow-hidden shadow-2xl">
-                  <picture className="block w-full h-full">
-                    <source srcSet={publicImage('hotusa_image.webp')} type="image/webp" />
-                    <img
-                      src={publicImage('hotusa_image.jpg')}
-                      alt="Alexandre Carnero Hero"
-                      className="w-full h-full object-cover object-[center_43%]"
-                    />
-                  </picture>
-                </div>
+                <HeroPhotos />
                 {/* Iconos tecnologías - ajustados para responsive */}
                 <div className="absolute top-1/4 -left-4 sm:-left-6 w-12 h-12 sm:w-16 sm:h-16 animate-float">
                   <div className="w-full h-full rounded-xl bg-[#282C34] p-2 shadow-lg">
