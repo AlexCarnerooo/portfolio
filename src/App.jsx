@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import { saveAs } from 'file-saver'
 import ContactForm from './ContactForm'
+import AskMyCV from './components/AskMyCV'
 
 // Inicializar EmailJS con tu clave pública
 emailjs.init("slXG_icFbWsZU8f2r");
@@ -309,6 +310,9 @@ function App() {
                 Abierto a nuevas oportunidades
               </button>
             </div>
+          </div>
+          <div className="max-w-6xl mx-auto mt-16">
+            <AskMyCV />
           </div>
         </div>
       </section>
