@@ -9,7 +9,7 @@ const REST_ANGLE = -15
 const PIVOT_X = 186
 const PIVOT_Y = -64
 
-const stack = ['Python', 'LangGraph', 'LangChain', 'RAG', 'Snowflake', 'FastAPI']
+const stack = ['Python', 'LangGraph', 'LangChain', 'RAG', 'FastAPI']
 
 const prefersReducedMotion = () =>
   typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches

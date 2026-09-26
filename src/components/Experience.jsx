@@ -16,44 +16,50 @@ const jobs = [
     points: {
       en: [
         'I analyse cybersecurity data across the whole company to assess its security posture and provide a global view of its current state.',
-        'I build and maintain data pipelines and transformations with Python and Snowflake.',
-        'I contribute to cybersecurity analytics and AI use cases, using Azure DevOps and CI/CD for development and deployment.',
+        'I build and maintain data pipelines and transformations with Python, SQL and Snowflake.',
+        'I monitor automated jobs and data flows with Grafana, and use Git, Azure DevOps and CI/CD for development and deployment.',
+        'I contribute to cybersecurity analytics and AI use cases.',
       ],
       es: [
         'Analizo los datos de ciberseguridad de toda la compañía para evaluar su postura de seguridad y ofrecer una visión global de su estado actual.',
-        'Desarrollo y mantengo pipelines y transformaciones de datos con Python y Snowflake.',
-        'Contribuyo a casos de uso de analítica de ciberseguridad e IA, con Azure DevOps y CI/CD para el desarrollo y despliegue.',
+        'Desarrollo y mantengo pipelines y transformaciones de datos con Python, SQL y Snowflake.',
+        'Monitorizo procesos y trabajos automatizados con Grafana, y trabajo con Git, Azure DevOps y CI/CD para el desarrollo y despliegue.',
+        'Contribuyo a casos de uso de analítica de ciberseguridad e IA.',
       ],
       gl: [
         'Analizo os datos de ciberseguridade de toda a compañía para avaliar a súa postura de seguridade e ofrecer unha visión global do seu estado actual.',
-        'Desenvolvo e manteño pipelines e transformacións de datos con Python e Snowflake.',
-        'Contribúo a casos de uso de analítica de ciberseguridade e IA, con Azure DevOps e CI/CD para o desenvolvemento e o despregamento.',
+        'Desenvolvo e manteño pipelines e transformacións de datos con Python, SQL e Snowflake.',
+        'Monitorizo procesos e traballos automatizados con Grafana, e traballo con Git, Azure DevOps e CI/CD para o desenvolvemento e o despregamento.',
+        'Contribúo a casos de uso de analítica de ciberseguridade e IA.',
       ],
     },
-    tags: ['Python', 'Snowflake', 'Azure DevOps', 'CI/CD'],
+    tags: ['Python', 'SQL', 'Snowflake', 'Grafana', 'Git', 'Azure DevOps', 'CI/CD'],
   },
   {
     role: 'Freelance AI Engineer',
     company: 'Nó lab',
     logos: [{ src: companyLogo('nolab.webp'), alt: 'Nó lab' }],
-    context: { en: 'Own business, B2B', es: 'Negocio propio, B2B', gl: 'Negocio propio, B2B' },
+    context: { en: 'Own business · B2B & B2C', es: 'Negocio propio · B2B y B2C', gl: 'Negocio propio · B2B e B2C' },
     dates: { en: '2025 – present', es: '2025 – ahora', gl: '2025 – agora' },
     current: true,
     points: {
       en: [
-        'Built and sold a real estate scraping system with Python and Selenium for B2B lead generation.',
-        'I build SaaS-style automation tools with LLMs and n8n for real estate agencies, investors and advisory firms.',
+        'We work with advisory firms, real estate agencies and local businesses, helping them with investment decisions and automating their processes with AI.',
+        'We build tailored end-to-end (full-stack) solutions: from data collection and analysis to LLM agents, backends and web apps.',
+        'We serve both businesses and individuals (B2B and B2C).',
       ],
       es: [
-        'Construí y vendí un sistema de scraping inmobiliario con Python y Selenium para captación de leads B2B.',
-        'Desarrollo herramientas de automatización tipo SaaS con LLMs y n8n para inmobiliarias, inversores y asesorías.',
+        'Colaboramos con asesorías, inmobiliarias y comercios para ayudarles en sus decisiones de inversión y automatizar sus procesos con IA.',
+        'Desarrollamos soluciones a medida de principio a fin (full-stack): desde la captación y el análisis de datos hasta agentes con LLMs, backends y aplicaciones web.',
+        'Trabajamos tanto con empresas como con particulares (B2B y B2C).',
       ],
       gl: [
-        'Construín e vendín un sistema de scraping inmobiliario con Python e Selenium para captación de leads B2B.',
-        'Desenvolvo ferramentas de automatización tipo SaaS con LLMs e n8n para inmobiliarias, investidores e asesorías.',
+        'Colaboramos con asesorías, inmobiliarias e comercios para axudalos nas súas decisións de investimento e automatizar os seus procesos con IA.',
+        'Desenvolvemos solucións a medida de principio a fin (full-stack): desde a captación e a análise de datos ata axentes con LLMs, backends e aplicacións web.',
+        'Traballamos tanto con empresas como con particulares (B2B e B2C).',
       ],
     },
-    tags: ['Python', 'Selenium', 'LLMs', 'n8n'],
+    tags: ['Python', 'LLMs', 'LangGraph', 'FastAPI', 'React'],
   },
   {
     role: 'AI Engineer',
@@ -63,19 +69,19 @@ const jobs = [
     dates: { en: 'Feb 2026 – Jun 2026', es: 'Feb 2026 – Jun 2026', gl: 'Feb 2026 – Xuñ 2026' },
     points: {
       en: [
-        'Developed machine learning models for threat detection and risk analysis.',
-        'Contributed to the development of LLM agents with LangGraph.',
+        'Developed machine learning models to predict cyberattacks before they happen.',
+        'Built a RAG system with LangGraph to know how to respond to those same attacks.',
       ],
       es: [
-        'Desarrollé modelos de machine learning para detección de amenazas y análisis de riesgos.',
-        'Contribuí al desarrollo de agentes LLM con LangGraph.',
+        'Desarrollé modelos de machine learning para predecir ciberataques antes de que se produzcan.',
+        'Construí un sistema RAG con LangGraph para saber cómo reaccionar ante esos mismos ataques.',
       ],
       gl: [
-        'Desenvolvín modelos de machine learning para detección de ameazas e análise de riscos.',
-        'Contribuín ao desenvolvemento de axentes LLM con LangGraph.',
+        'Desenvolvín modelos de machine learning para predicir ciberataques antes de que se produzan.',
+        'Construín un sistema RAG con LangGraph para saber como reaccionar ante eses mesmos ataques.',
       ],
     },
-    tags: ['Machine Learning', 'LangGraph', 'Python'],
+    tags: ['Machine Learning', 'RAG', 'LangGraph', 'Python'],
   },
 ]
 
