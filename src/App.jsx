@@ -9,6 +9,9 @@ import LanguageSwitcher from './components/LanguageSwitcher'
 import HeroPhotos from './components/HeroPhotos'
 import { useLang } from './i18n/LanguageContext'
 
+// Sección de proyectos oculta temporalmente (pendiente de actualizar)
+const SHOW_PROJECTS = false
+
 // Inicializar EmailJS con tu clave pública
 emailjs.init("slXG_icFbWsZU8f2r");
 
@@ -228,7 +231,7 @@ function App() {
               <div className="hidden lg:flex items-center gap-10">
                 <a href="#sobre-mi" className="text-white hover:text-white/70 transition-colors font-medium">{t.nav.about}</a>
                 <a href="#experiencia" className="text-white hover:text-white/70 transition-colors font-medium">{t.nav.experience}</a>
-                <a href="#proyectos" className="text-white hover:text-white/70 transition-colors font-medium">{t.nav.projects}</a>
+                {SHOW_PROJECTS && <a href="#proyectos" className="text-white hover:text-white/70 transition-colors font-medium">{t.nav.projects}</a>}
                 <a href="#logros" className="text-white hover:text-white/70 transition-colors font-medium">{t.nav.achievements}</a>
                 <a href="#contacto" className="text-white hover:text-white/70 transition-colors font-medium">{t.nav.contact}</a>
                 <LanguageSwitcher className="border-l border-white/15 pl-6 -ml-4" />
@@ -240,7 +243,7 @@ function App() {
               <div className="py-4 space-y-4">
                 <a href="#sobre-mi" onClick={() => setMobileMenuOpen(false)} className="block text-white hover:text-white/70 transition-colors font-medium">{t.nav.about}</a>
                 <a href="#experiencia" onClick={() => setMobileMenuOpen(false)} className="block text-white hover:text-white/70 transition-colors font-medium">{t.nav.experience}</a>
-                <a href="#proyectos" onClick={() => setMobileMenuOpen(false)} className="block text-white hover:text-white/70 transition-colors font-medium">{t.nav.projects}</a>
+                {SHOW_PROJECTS && <a href="#proyectos" onClick={() => setMobileMenuOpen(false)} className="block text-white hover:text-white/70 transition-colors font-medium">{t.nav.projects}</a>}
                 <a href="#logros" onClick={() => setMobileMenuOpen(false)} className="block text-white hover:text-white/70 transition-colors font-medium">{t.nav.achievements}</a>
                 <a href="#contacto" onClick={() => setMobileMenuOpen(false)} className="block text-white hover:text-white/70 transition-colors font-medium">{t.nav.contact}</a>
               </div>
@@ -288,6 +291,7 @@ function App() {
       <Experience />
 
       {/* 3. Projects Section */}
+      {SHOW_PROJECTS && (
       <section id="proyectos" className="py-20 bg-gradient-to-b from-[#1e1e3f] to-[#1a1a35]">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-center text-white mb-4">{t.projects.title}</h2>
@@ -373,6 +377,7 @@ function App() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Skills Section */}
       <section className="py-20 bg-gradient-to-b from-[#1a1a35] to-[#1e1e3f] overflow-hidden">
